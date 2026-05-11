@@ -1,0 +1,7 @@
+.logo {
+    color: var(--color-accent);
+}
+
+.logo {
+    @mixin h1;
+}

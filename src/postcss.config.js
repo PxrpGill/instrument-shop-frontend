@@ -1,10 +1,6 @@
-import path from "path";
-import { fileURLToPath } from "url";
+const path = require("path");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const config = {
+module.exports = {
 	plugins: {
 		"postcss-import": {
 			path: [path.resolve(__dirname, "shared/styles")],
@@ -28,5 +24,3 @@ const config = {
 		autoprefixer: {},
 	},
 };
-
-export default config;
