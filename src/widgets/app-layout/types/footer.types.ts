@@ -10,3 +10,5 @@ export type TopFooterProps = {
 export type MiddleFooterProps = {
 	links?: Array<SiteLinkProps>;
 } & PropsWithClassName;
+
+export type BottomFooterProps = PropsWithClassName;

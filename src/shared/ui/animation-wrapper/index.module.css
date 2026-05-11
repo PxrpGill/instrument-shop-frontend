@@ -1,6 +1,7 @@
 .wrapper {
-    @mixin transition opacity;
+    @mixin transitionOptions;
 
+    transition-property: opacity;
     opacity: 0;
 
     &.visible {

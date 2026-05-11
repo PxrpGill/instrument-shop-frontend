@@ -1,0 +1,40 @@
+.root {
+    @mixin responsive padding-block-start, 80, 120;
+    @mixin responsive gap, 10, 15;
+
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $mobile) {
+        flex-direction: column;
+    }
+}
+
+.group {
+    @mixin responsive gap, 10, 15;
+
+    display: flex;
+
+    @media (max-width: $mobile) {
+        flex-direction: column;
+    }
+}
+
+.link,
+.time {
+    @mixin small;
+
+    color: var(--color-text-muted)
+}
+
+.link {
+    @mixin transitionOptions;
+
+    transition-property: opacity;
+
+    @media (hover:hover) {
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
