@@ -12,3 +12,7 @@ main {
         min-height: unset;
     }
 }
+
+.container {
+    @mixin responsive padding-inline, 20, 60;
+}

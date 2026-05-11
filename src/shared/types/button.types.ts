@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from "react";
+import type { PropsWithChildren, ReactNode } from "react";
 import type { PropsWithClassName } from "./props-with-classname";
 
 export type CustomLinkProps = {
@@ -13,6 +13,8 @@ export type CustomButtonProps = {
 } & PropsWithChildren &
 	PropsWithClassName;
 
+export type ButtonComponentVariantsType = "default" | "blank";
+
 export type ButtonComponentSizeType = "s" | "m" | "l";
 
 export type ButtonComponentThemeType = "light" | "dark";
@@ -20,6 +22,9 @@ export type ButtonComponentThemeType = "light" | "dark";
 export type ButtonComponentProps = {
 	theme?: ButtonComponentThemeType;
 	size?: ButtonComponentSizeType;
+	variant?: ButtonComponentVariantsType;
+	leftIcon?: ReactNode;
+	rightIcon?: ReactNode;
 } & PropsWithClassName &
 	PropsWithChildren &
 	Omit<CustomButtonProps, "children" | "className"> &

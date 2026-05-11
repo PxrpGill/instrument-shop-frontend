@@ -20,7 +20,7 @@
 }
 
 @define-mixin h4 {
-    @mixin responsive font-size, 16, 24;
+    @mixin responsive font-size, 18, 24;
 
     line-height: 1.5;
     font-weight: 600;
@@ -41,7 +41,7 @@
 }
 
 @define-mixin body {
-    @mixin responsive font-size, 14, 18;
+    @mixin responsive font-size, 14, 14;
 
     line-height: 1.5;
     font-weight: 400;
@@ -50,6 +50,6 @@
 @define-mixin small {
     @mixin responsive font-size, 12, 14;
 
-    line-height: 1.5;
+    line-height: 1.1;
     font-weight: 400;
 }

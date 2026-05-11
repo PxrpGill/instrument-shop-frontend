@@ -11,16 +11,21 @@ export default function Button({
 	href,
 	target = "_self",
 	onClick,
+	variant = "default",
 	type = "button",
+	leftIcon,
+	rightIcon,
 }: ButtonComponentProps) {
 	if (href)
 		return (
 			<Link
 				href={href}
 				target={target}
-				className={`${css.root} ${className} ${size} ${theme}`.trim()}
+				className={`${css.root} ${className} ${css[size]} ${css[theme]} ${css[variant]}`.trim()}
 			>
+				{leftIcon}
 				{children}
+				{rightIcon}
 			</Link>
 		);
 
@@ -28,9 +33,11 @@ export default function Button({
 		<button
 			onClick={onClick}
 			type={type}
-			className={`${css.root} ${className} ${size} ${theme}`.trim()}
+			className={`${css.root} ${className} ${css[size]} ${css[theme]} ${css[variant]}`.trim()}
 		>
+			{leftIcon}
 			{children}
+			{rightIcon}
 		</button>
 	);
 }

@@ -1,0 +1,59 @@
+.root {
+    @mixin transitionOptions;
+    @mixin responsive border-radius, 5, 5;
+    @mixin responsive gap, 5, 5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-property: color, background-color, opacity;
+
+    &.dark {
+        color: var(--color-text-on-accent);
+
+        &:not(.blank) {
+            background-color: var(--color-gray-900);
+        }
+    }
+
+    &.light {
+        color: var(--color-text-primary);
+
+        &:not(.blank) {
+            background-color: var(--color-gray-200);
+        }
+    }
+
+    &:not(.blank) {
+        @media (hover:hover) {
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+
+    &.blank {
+        @media (hover:hover) {
+            &:not(:disabled):hover {
+                color: var(--color-accent-hover);
+            }
+        }
+    }
+
+    &.s {
+        @mixin small;
+    }
+
+    &.m {
+        @mixin body;
+    }
+
+    &.l {
+        @mixin h6;
+    }
+
+    &:not(.blank) {
+        @mixin responsive padding-inline, 10, 10;
+        @mixin responsive padding-block, 5, 5; 
+    }
+}

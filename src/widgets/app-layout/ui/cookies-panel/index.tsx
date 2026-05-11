@@ -30,6 +30,8 @@ export default function CookiesPanel() {
 
 	const handleButtonClick = () => {
 		CookiesManager.set(COOKIES_PANEL_TOKENS.token, COOKIES_PANEL_TOKENS.value);
+
+		toggleOpen(false);
 	};
 
 	return (
@@ -37,8 +39,8 @@ export default function CookiesPanel() {
 			<div className={css.contentWrapper}>
 				<p className={css.cookiesText}>
 					Этот сайт использует cookies, чтобы наш сайт стал лучше&nbsp;&mdash;
-					более персонализированным и&nbsp;удобным для вас. Пользуясь сайтом,
-					вы&nbsp;принимаете нашу{" "}
+					более персонализированным и&nbsp;удобным для вас.
+					<br /> Пользуясь сайтом, вы&nbsp;принимаете нашу{" "}
 					<Link href={APP_ROUTES.privacyPolicy} target="_blank">
 						политику конфиденциальности
 					</Link>{" "}
@@ -48,7 +50,14 @@ export default function CookiesPanel() {
 					</Link>
 					.
 				</p>
-				<Button onClick={handleButtonClick}>Принять</Button>
+				<div className={css.buttons}>
+					<Button theme="light" onClick={handleButtonClick}>
+						Принять
+					</Button>
+					<Button theme="light" href="about:blank">
+						Отклонить
+					</Button>
+				</div>
 			</div>
 		</dialog>
 	);

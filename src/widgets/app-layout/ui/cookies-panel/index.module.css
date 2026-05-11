@@ -1,0 +1,58 @@
+.root {
+    @mixin responsive width, 330, 830;
+    @mixin responsive margin-block-end, 10, 10;
+    @mixin transitionOptions;
+    @mixin responsive padding, 10, 10;
+    @mixin responsive border-radius, 10, 10;
+
+    transition-property: opacity, translate, visibility;
+
+    position: fixed;
+    bottom: 0;
+
+    visibility: hidden;
+
+    background-color: var(--color-bg-primary);
+    left: 50%;
+    translate: -50% 200%;
+    opacity: 0;
+
+    &.open {
+        translate: -50% 0;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.contentWrapper {
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.cookiesText {
+    @mixin small;
+
+    color: var(--color-gray-900);
+
+    a {
+        @mixin transitionOptions;
+
+        transition-property: opacity;
+        text-decoration: underline;
+
+        @media (hover:hover) {
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+.buttons {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+}
