@@ -13,6 +13,7 @@
 
         &:not(.blank) {
             background-color: var(--color-accent);
+            border-color: var(--color-text-on-accent);
         }
     }
 
@@ -25,6 +26,10 @@
     }
 
     &:not(.blank) {
+        @mixin responsive --border, 1, 1;
+
+        border: var(--border) solid;
+
         @media (hover:hover) {
             &:hover {
                 opacity: 0.6;

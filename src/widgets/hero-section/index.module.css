@@ -1,0 +1,55 @@
+.root {
+    position: relative;
+    height: 100svh;
+}
+
+.wrapper {
+    @mixin responsive padding-block-end, 20, 40;
+    @mixin responsive gap, 20, 15;
+
+    position: relative;
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+}
+
+.title {
+    @mixin h4;
+}
+
+.description {
+    @mixin responsive max-width, 0, 570;
+    @mixin body;
+
+    @media (max-width: $mobile) {
+        max-width: unset;
+    }
+}
+
+.button[class] {
+    width: fit-content;
+}
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    backdrop-filter: blur(25px);
+
+    &::before {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.4;
+    }
+}
