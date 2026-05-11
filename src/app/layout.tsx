@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 import { GENERAL_META } from "@/shared/config/general-meta.constants";
+import GoogleSans from "@/shared/config/local-font";
 
 export const metadata: Metadata = {
 	title: GENERAL_META.title,
@@ -19,7 +20,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<body className={GoogleSans.className}>{children}</body>
 		</html>
 	);
 }
