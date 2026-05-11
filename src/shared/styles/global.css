@@ -1,3 +1,11 @@
 html {
     font-size: 1vw;
 }
+
+main {
+    min-height: 100vh;
+
+    @media (max-width: $mobile) {
+        min-height: unset;
+    }
+}
