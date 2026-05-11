@@ -36,7 +36,7 @@
 @define-mixin h6 {
     @mixin responsive font-size, 12, 18;
 
-    line-height: 1.5;
+    line-height: 1.2;
     font-weight: 600;
 }
 

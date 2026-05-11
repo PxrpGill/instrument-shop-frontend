@@ -1,0 +1,51 @@
+.root {
+    @mixin responsive padding-block, 60, 60;
+    @mixin responsive gap, 20, 20;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @mixin h3;
+}
+
+.imageWrapper {
+    @mixin responsive height, 270, 500;
+    @mixin responsive border-radius, 15, 15;
+
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.contentWrapper {
+    @mixin responsive gap, 20, 30;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.content {
+    h3 {
+        @mixin responsive padding-block-end, 10, 10;
+        @mixin h6;
+    }
+
+    p {
+        @mixin small;
+        @mixin responsive padding-block-end, 20, 20;
+
+        line-height: 1.3;
+    }
+
+    h3:last-child,
+    p:last-child {
+        padding-block-end: 0;
+    }
+}

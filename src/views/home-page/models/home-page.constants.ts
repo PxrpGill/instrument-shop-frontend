@@ -1,4 +1,5 @@
 import { APP_ROUTES } from "@/shared/config/app-routes";
+import type { AboutCompanySectionProps } from "@/widgets/about-company-section/types/about-company-section.types";
 import type { HeroSectionProps } from "@/widgets/hero-section/types/hero-section.types";
 
 export const HERO_SECTION_DATA: HeroSectionProps = {
@@ -9,6 +10,18 @@ export const HERO_SECTION_DATA: HeroSectionProps = {
 	poster: {
 		webp: {
 			src: "/mock/hero/hero.webp",
+		},
+	},
+};
+
+export const ABOUT_COMPANY_DATA: AboutCompanySectionProps = {
+	title: "Немного о&nbsp;нас",
+	content:
+		"<h3>Мы&nbsp;за&nbsp;бескомпромиссное качество и&nbsp;широкий ассортимент</h3><p>Наш каталог включает много позиций: от&nbsp;бытовых шуруповертов до&nbsp;тяжелого промышленного оборудования и&nbsp;высокоточных измерительных приборов. Мы&nbsp;тщательно отбираем каждую модель, ориентируясь на&nbsp;долговечность, эргономику и&nbsp;соответствие международным стандартам безопасности. С&nbsp;нами вы&nbsp;можете быть уверены, что инструмент не&nbsp;подведет в&nbsp;самый ответственный момент.</p><h3>Сервис, выходящий за&nbsp;рамки простой продажи</h3><p>Мы&nbsp;верим, что покупка инструмента&nbsp;&mdash; это только начало сотрудничества. Наши специалисты всегда готовы провести профессиональную консультацию, помочь с&nbsp;подбором расходных материалов или организовать быструю доставку прямо на&nbsp;объект.</p><h3>Инновации и&nbsp;устойчивое развитие</h3><p>Строительные технологии не&nbsp;стоят на&nbsp;месте, и&nbsp;мы&nbsp;развиваемся вместе с&nbsp;ними. Мы&nbsp;регулярно обновляем ассортимент новинками аккумуляторного инструмента, внедряем цифровые системы управления заказами и&nbsp;предлагаем гибкие условия для постоянных партнеров. Наша цель&nbsp;&mdash; сделать процесс приобретения и&nbsp;эксплуатации инструмента максимально простым, эффективным и&nbsp;выгодным для каждого клиента.</p>",
+
+	poster: {
+		webp: {
+			src: "/mock/about-company/about-company.webp",
 		},
 	},
 };
