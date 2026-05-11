@@ -6,9 +6,11 @@ import { APP_ROUTES } from "@/shared/config/app-routes";
 import { COOKIES_PANEL_TOKENS } from "@/shared/config/general-cookies-tokens";
 import { CookiesManager } from "@/shared/lib/cookies-manager";
 import Button from "@/shared/ui/button";
+import { useAppLayoutContext } from "../../models/app-layout-context";
 import css from "./index.module.css";
 
 export default function CookiesPanel() {
+	const { isFooterVisible } = useAppLayoutContext();
 	const [isOpen, toggleOpen] = useState<boolean>(false);
 	const timeoutRef = useRef<number>(0);
 
@@ -35,7 +37,10 @@ export default function CookiesPanel() {
 	};
 
 	return (
-		<dialog className={`${css.root} ${isOpen && css.open}`.trim()} open>
+		<dialog
+			className={`${css.root} ${isOpen && !isFooterVisible && css.open}`.trim()}
+			open
+		>
 			<div className={css.contentWrapper}>
 				<p className={css.cookiesText}>
 					Этот сайт использует cookies, чтобы наш сайт стал лучше&nbsp;&mdash;

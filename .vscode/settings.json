@@ -9,8 +9,7 @@
   "biome.enabled": true,
   "biome.lspEnabled": true,
   "biome.requireConfig": false,
-  "biome.bin": "./src/node_modules/.bin/biome",
-  "biome.lspBin": "./src/node_modules/.bin/biome",
+  "biome.lspBin": "./src/node_modules/.pnpm/@biomejs+cli-darwin-arm64@2.4.15/node_modules/@biomejs/cli-darwin-arm64/biome",
   "biome.configPath": "./src/biome.json",
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
