@@ -1,3 +1,45 @@
 :root {
-    
+  /* === Backgrounds (тёмно-серые) === */
+  --color-bg-primary: #0d0d0d;
+  --color-bg-secondary: #1a1a1a;
+  --color-bg-tertiary: #242424;
+  --color-bg-elevated: #2e2e2e;
+
+  /* === Text (максимальная читаемость на тёмном фоне) === */
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #6b6b6b;
+  --color-text-on-accent: #0d0d0d;
+
+  /* === Жёлтый акцент === */
+  --color-accent: #f5c518;
+  --color-accent-hover: #ffd43b;
+  --color-accent-pressed: #d4a017;
+  --color-accent-bg: #2a2400;
+  --color-accent-border: #4a3e00;
+
+  /* === Полутона серого === */
+  --color-gray-100: #1a1a1a;
+  --color-gray-200: #2a2a2a;
+  --color-gray-300: #3a3a3a;
+  --color-gray-400: #505050;
+  --color-gray-500: #6b6b6b;
+  --color-gray-600: #888888;
+  --color-gray-700: #a3a3a3;
+  --color-gray-800: #cccccc;
+  --color-gray-900: #f0f0f0;
+
+  /* === Семантические цвета (адаптированы под тёмную тему) === */
+  --color-success: #4caf50;
+  --color-success-bg: #1a3a1a;
+  --color-error: #ef5350;
+  --color-error-bg: #3a1a1a;
+  --color-warning: #ff9800;
+  --color-warning-bg: #3a2a1a;
+  --color-info: #42a5f5;
+  --color-info-bg: #1a2a3a;
+
+  /* === Границы === */
+  --color-border: #2e2e2e;
+  --color-border-light: #3a3a3a;
 }
