@@ -7,6 +7,7 @@ import type { ReactNode } from "react";
 
 import { GENERAL_META } from "@/shared/config/general-meta.constants";
 import GoogleSans from "@/shared/config/local-font";
+import AppLayout from "@/widgets/app-layout";
 
 export const metadata: Metadata = {
 	title: GENERAL_META.title,
@@ -20,7 +21,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={GoogleSans.className}>{children}</body>
+			<body className={GoogleSans.className}>
+				<AppLayout>{children}</AppLayout>
+			</body>
 		</html>
 	);
 }

@@ -144,3 +144,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+dialog {
+  border: unset;
+  margin: 0;
+  padding: 0;
+}
