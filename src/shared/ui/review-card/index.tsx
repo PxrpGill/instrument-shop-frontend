@@ -1,6 +1,8 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: <explanation> */
 
+"use client";
+
 import { StarIcon } from "@phosphor-icons/react";
 
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
@@ -22,10 +24,14 @@ export default function ReviewCard({
 	description,
 	author,
 	grade,
+	className,
 }: ReviewCardProps) {
 	return (
-		<AnimationWrapper as="article">
-			<ReviewAuthor {...author} />
+		<AnimationWrapper
+			as="article"
+			className={`${css.root} ${className}`.trim()}
+		>
+			<ReviewAuthor {...author} className={css.author} />
 			{title && (
 				<h5 dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
 			)}
@@ -40,7 +46,8 @@ export default function ReviewCard({
 					<StarIcon
 						key={key}
 						className={css.starIcon}
-						weight={key <= grade ? "fill" : "bold"}
+						weight={key < grade ? "fill" : "bold"}
+						color="#f5c518"
 					/>
 				))}
 			</div>

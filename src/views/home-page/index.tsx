@@ -4,6 +4,7 @@ import ReviewsSection from "@/widgets/reviews-section";
 import {
 	ABOUT_COMPANY_DATA,
 	HERO_SECTION_DATA,
+	REVIEWS_DATA,
 } from "./models/home-page.constants";
 
 export default function HomePage() {
@@ -11,7 +12,7 @@ export default function HomePage() {
 		<main>
 			<HeroSection {...HERO_SECTION_DATA} />
 			<AboutCompanySection {...ABOUT_COMPANY_DATA} />
-			<ReviewsSection title="Отзывы покупателей" />
+			<ReviewsSection {...REVIEWS_DATA} />
 		</main>
 	);
 }

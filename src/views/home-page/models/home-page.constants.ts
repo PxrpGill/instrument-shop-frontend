@@ -1,6 +1,7 @@
 import { APP_ROUTES } from "@/shared/config/app-routes";
 import type { AboutCompanySectionProps } from "@/widgets/about-company-section/types/about-company-section.types";
 import type { HeroSectionProps } from "@/widgets/hero-section/types/hero-section.types";
+import type { ReviewsSectionProps } from "@/widgets/reviews-section/types/reviews-section.types";
 
 export const HERO_SECTION_DATA: HeroSectionProps = {
 	title: "Инструменты для работы без компромиссов",
@@ -24,4 +25,50 @@ export const ABOUT_COMPANY_DATA: AboutCompanySectionProps = {
 			src: "/mock/about-company/about-company.webp",
 		},
 	},
+};
+
+export const REVIEWS_DATA: ReviewsSectionProps = {
+	title: "Отзывы покупателей",
+	reviews: [
+		{
+			title: "Надежный инструмент для ежедневной работы",
+			description:
+				"Заказывал здесь комплект аккумуляторного инструмента для бригады. Доставили быстро, всё оригинальное, с&nbsp;гарантией. Работаем на&nbsp;объектах уже третий месяц&nbsp;&mdash; полет нормальный. Особенно порадовала цена на&nbsp;расходники, теперь буду закупаться только у&nbsp;вас.",
+			author: {
+				icon: "/mock/reviews/1.png",
+				fullName: "Алексей Смирнов",
+			},
+			grade: 5,
+		},
+		{
+			title: "Идеально для ремонта в&nbsp;квартире",
+			description:
+				"Брал перфоратор и&nbsp;лазерный уровень для самостоятельного ремонта. Инструмент очень удобный, в&nbsp;руке лежит как влитой. Отдельное спасибо консультантам: помогли выбрать модель, которая не&nbsp;перегревается при долгой работе, и&nbsp;при этом не&nbsp;стоит как крыло самолета.",
+			author: {
+				icon: "/mock/reviews/2.png",
+				fullName: "Дмитрий Волков",
+			},
+			grade: 5,
+		},
+		{
+			title: "Отличное пополнение для гаража",
+			description:
+				"Купил торцовочную пилу для строительства беседки на&nbsp;даче. Рез ровный, люфтов нет, настройки точные прямо из&nbsp;коробки. Сайт очень понятный, легко нашел нужные характеристики. Доставка в&nbsp;область заняла всего два дня, курьер заранее позвонил. Рекомендую!",
+			author: {
+				icon: "/mock/reviews/3.png",
+				fullName: "Игорь Николаев",
+			},
+			grade: 5,
+		},
+		{
+			title: "Качество сервиса на&nbsp;высоте",
+			description:
+				"Долго искал конкретную модель промышленного пылесоса, здесь она оказалась в&nbsp;наличии по&nbsp;адекватной цене. Оформил заказ через корзину, менеджер перезвонил буквально через 10&nbsp;минут, чтобы уточнить детали и&nbsp;подтвердить бронь. Оплачивал уже при получении после проверки товара. Упаковано было на&nbsp;совесть, даже коробка не&nbsp;помялась. Приятно иметь дело с&nbsp;профессионалами своего дела.",
+			author: {
+				icon: "/mock/reviews/4.png",
+				fullName: "Максим Соколов",
+			},
+			grade: 5,
+		},
+	],
 };

@@ -1,5 +1,5 @@
 .root {
-    @mixin responsive padding-block, 60, 60;
+    @mixin responsive padding-block, 45, 60;
     @mixin responsive gap, 20, 20;
 
     display: flex;
