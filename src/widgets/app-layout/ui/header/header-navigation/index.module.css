@@ -1,0 +1,14 @@
+.root {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+}
+
+.button[class] {
+    @mixin responsive padding, 5, 5;
+}
+
+.icon {
+    @mixin responsive width, 18, 18;
+    @mixin responsive height, 18, 18;
+}

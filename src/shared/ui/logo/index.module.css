@@ -3,6 +3,15 @@
 
     display: flex;
     align-items: center;
+
+    &.withoutAddressOnMobile {
+        @media (max-width: $mobile) {
+            .verticalDivider,
+            .address {
+                display: none;
+            }
+        }
+    }
 }
 
 .logo {
