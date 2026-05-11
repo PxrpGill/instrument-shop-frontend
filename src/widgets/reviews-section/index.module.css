@@ -1,0 +1,7 @@
+.root {
+    @mixin responsive padding-block, 60, 60;
+}
+
+.title {
+    @mixin h3;
+}
