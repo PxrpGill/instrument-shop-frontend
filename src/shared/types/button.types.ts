@@ -1,6 +1,12 @@
 import type { PropsWithChildren, ReactNode } from "react";
 import type { PropsWithClassName } from "./props-with-classname";
 
+export type SiteLinkProps = {
+	href?: string;
+	title?: string;
+	target?: "_self" | "_blank";
+};
+
 export type CustomLinkProps = {
 	href?: string;
 	target?: "_self" | "_blank";

@@ -9,7 +9,7 @@ main {
     min-height: 100vh;
 
     @media (max-width: $mobile) {
-        min-height: unset;
+        min-height: 700px;
     }
 }
 

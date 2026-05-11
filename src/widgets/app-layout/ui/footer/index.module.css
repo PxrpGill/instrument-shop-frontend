@@ -1,0 +1,10 @@
+.root {
+    @mixin responsive padding-block-start, 20, 30;
+    @mixin responsive padding-block-end, 50, 60;
+    @mixin responsive gap, 50, 30;
+
+    background-color: var(--color-bg-primary);
+    display: flex;
+    flex-direction: column;
+}
+

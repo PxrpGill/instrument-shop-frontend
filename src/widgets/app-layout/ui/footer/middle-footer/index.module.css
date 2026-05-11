@@ -1,0 +1,25 @@
+.list {
+    @mixin responsive --col, 0, 200;
+    @mixin responsive column-gap, 20, 30;
+    @mixin responsive row-gap, 15, 10;
+
+    display: grid;
+    grid-template-columns: repeat(4, var(--col));
+
+    @media (max-width: $mobile) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.link {
+    @mixin body;
+    @mixin transitionOptions;
+
+    transition-property: opacity;
+
+    @media (hover:hover) {
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}

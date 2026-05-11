@@ -1,0 +1,28 @@
+.root {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+.feedback {
+    @mixin responsive gap, 5, 5;
+
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $mobile) {
+        flex-direction: row;
+    }
+}
+
+.link,
+.feedbackText {
+    @mixin small;
+}

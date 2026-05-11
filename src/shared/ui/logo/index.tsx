@@ -1,6 +1,6 @@
 import css from "./index.module.css";
 
-export default function HeaderLogo() {
+export default function Logo() {
 	return (
 		<div className={css.root}>
 			<p className={css.logo}>Инструмент</p>
