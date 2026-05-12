@@ -51,7 +51,7 @@
 
 .info {
     @mixin responsive gap, 5, 5;
-    @mixin responsive padding-block-end, 15;
+    @mixin responsive padding-block-end, 15, 15;
 
     display: flex;
     flex-direction: column;

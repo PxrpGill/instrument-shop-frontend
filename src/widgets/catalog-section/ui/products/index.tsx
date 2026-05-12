@@ -7,6 +7,7 @@ import ProductCard from "@/entities/product/ui/product-card";
 import GridModes from "@/features/grid-modes";
 import type { GridModeType } from "@/features/grid-modes/types/grid-modes.types";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
+import Pagination from "@/shared/ui/pagination";
 import type { CatalogProductsData } from "../../types/catalog-section.types";
 import css from "./index.module.css";
 
@@ -37,6 +38,12 @@ export default function Products({
 					</AnimationWrapper>
 				))}
 			</ul>
+			<Pagination
+				totalPages={10}
+				currentPage={1}
+				onPageChange={() => {}}
+				className={css.pagination}
+			/>
 		</div>
 	);
 }

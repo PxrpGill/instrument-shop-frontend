@@ -1,0 +1,83 @@
+.root {
+    @mixin responsive --radius, 8, 8;
+    @mixin responsive --border, 1.5, 1.5;
+
+    width: fit-content;
+
+    display: inline-flex;
+    align-items: stretch;
+    border: var(--border) solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+/* ── Segment (base) ──────────────────────────────────── */
+
+.seg {
+    @mixin body;
+    @mixin transitionOptions 0.15s;
+    @mixin responsive width, 36, 40;
+    @mixin responsive height, 36, 40;
+    @mixin responsive --inner-border, 1, 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-secondary);
+    border-right: var(--inner-border) solid var(--color-border);
+    transition-property: background-color, color;
+    cursor: pointer;
+
+    &:last-child {
+        border-right: none;
+    }
+
+    @media (hover: hover) {
+        &:not(.active):not(.dots):not(.disabled):hover {
+            background-color: var(--color-bg-elevated);
+            color: var(--color-text-primary);
+        }
+    }
+}
+
+/* ── Active page ─────────────────────────────────────── */
+
+.active {
+    background-color: var(--color-accent);
+    color: var(--color-text-on-accent);
+    font-weight: 700;
+    cursor: default;
+}
+
+/* ── Arrow buttons ───────────────────────────────────── */
+
+.arrow {
+    @mixin responsive width, 40, 44;
+    @mixin responsive font-size, 14, 16;
+
+    color: var(--color-accent);
+}
+
+.disabled {
+    color: var(--color-gray-400);
+    cursor: default;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--color-bg-tertiary);
+            color: var(--color-gray-400);
+        }
+    }
+}
+
+/* ── Ellipsis ────────────────────────────────────────── */
+
+.dots {
+    @mixin small;
+
+    color: var(--color-text-muted);
+    cursor: default;
+    letter-spacing: 0.05em;
+}
