@@ -6,3 +6,17 @@
     display: grid;
     grid-template-columns: var(--first-col) auto;
 }
+
+.contentWrapper {
+    @mixin responsive gap, 30, 40;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.divider {
+    @mixin responsive height, 2, 2;
+
+    background-color: var(--color-bg-tertiary);
+    width: 100%;
+}

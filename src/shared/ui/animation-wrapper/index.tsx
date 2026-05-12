@@ -1,6 +1,10 @@
 "use client";
 
-import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
+import type {
+	ComponentPropsWithoutRef,
+	ElementType,
+	PropsWithChildren,
+} from "react";
 
 import { useIntersectionObserver } from "@/shared/hooks/use-intersection-observer";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
@@ -8,8 +12,8 @@ import css from "./index.module.css";
 
 type AnimationWrapperProps<T extends ElementType> = {
 	as?: T;
-	children: ReactNode;
-} & Omit<ComponentPropsWithoutRef<T>, "as" | "children"> &
+} & PropsWithChildren &
+	Omit<ComponentPropsWithoutRef<T>, "as" | "children"> &
 	PropsWithClassName;
 
 export function AnimationWrapper<T extends ElementType = "div">({

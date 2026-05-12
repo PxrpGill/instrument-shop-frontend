@@ -21,12 +21,13 @@ export default function ProductCard({
 	className,
 	price,
 	sku,
+	cardMode = "vertical",
 }: ProductCardProps) {
 	const [firstCategory] = category;
 	const currentPoster = poster ?? FALLBACK_PRODUCT_IMAGE;
 
 	return (
-		<article className={`${css.root} ${className}`}>
+		<article className={`${css.root} ${className} ${css[cardMode]}`}>
 			<div className={css.imageWrapper}>
 				<Picture poster={currentPoster} />
 				<div className={css.backdrop} />
@@ -34,37 +35,39 @@ export default function ProductCard({
 					<ArrowUpRightIcon className={css.arrow} />
 				</Button>
 			</div>
-			{sku && (
-				<p
-					className={css.sku}
-					dangerouslySetInnerHTML={{ __html: "Артикул: " + sku }}
-				/>
-			)}
-			{(title || description) && (
-				<div className={css.info}>
-					{title && (
-						<h5
-							className={css.title}
-							dangerouslySetInnerHTML={{ __html: title }}
-						/>
-					)}
-					{description && (
-						<p
-							className={css.description}
-							dangerouslySetInnerHTML={{ __html: description }}
-						/>
-					)}
-				</div>
-			)}
-			<div className={css.cartWrapper}>
-				{price && <p className={css.price}>{price} ₽</p>}
-				<div className={css.buttons}>
-					<Button className={css.favoriteButton}>
-						<HeartIcon className={css.icon} />
-					</Button>
-					<Button leftIcon={<BasketIcon className={css.icon} />}>
-						Добавить
-					</Button>
+			<div className={css.informationWrapper}>
+				{sku && (
+					<p
+						className={css.sku}
+						dangerouslySetInnerHTML={{ __html: "Артикул: " + sku }}
+					/>
+				)}
+				{(title || description) && (
+					<div className={css.info}>
+						{title && (
+							<h5
+								className={css.title}
+								dangerouslySetInnerHTML={{ __html: title }}
+							/>
+						)}
+						{description && (
+							<p
+								className={css.description}
+								dangerouslySetInnerHTML={{ __html: description }}
+							/>
+						)}
+					</div>
+				)}
+				<div className={css.cartWrapper}>
+					{price && <p className={css.price}>{price} ₽</p>}
+					<div className={css.buttons}>
+						<Button className={css.favoriteButton}>
+							<HeartIcon className={css.icon} />
+						</Button>
+						<Button leftIcon={<BasketIcon className={css.icon} />}>
+							Добавить
+						</Button>
+					</div>
 				</div>
 			</div>
 			<Link

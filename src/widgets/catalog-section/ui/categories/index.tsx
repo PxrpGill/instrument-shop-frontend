@@ -19,9 +19,9 @@ export default function Categories({
 			)}
 			<ul className={css.list}>
 				{categories.map((category) => (
-					<li key={`${category.slug}-${category.title}`}>
+					<AnimationWrapper as="li" key={`${category.slug}-${category.title}`}>
 						<ProductCategoryCard {...category} className={css.card} />
-					</li>
+					</AnimationWrapper>
 				))}
 			</ul>
 		</AnimationWrapper>

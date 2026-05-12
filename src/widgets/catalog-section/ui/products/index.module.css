@@ -1,0 +1,31 @@
+.root {
+    @mixin responsive gap, 20, 20;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @mixin h4;
+}
+
+.list {
+    @mixin responsive gap, 20, 20;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    &.horizontal {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card[class] {
+    height: 100%;
+}
+
+.titleBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

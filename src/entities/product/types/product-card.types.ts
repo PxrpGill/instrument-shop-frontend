@@ -2,6 +2,8 @@ import type { ProductCategoryProps } from "@/entities/product-categories/types/p
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 import type { PictureFormatType } from "@/shared/ui/picture";
 
+export type ProductCardMode = "vertical" | "horizontal";
+
 export type ProductCardProps = {
 	id: number;
 	category: Array<Omit<ProductCategoryProps, "className" | "poster">>;
@@ -10,4 +12,5 @@ export type ProductCardProps = {
 	poster?: PictureFormatType;
 	price?: number;
 	sku?: string;
+	cardMode?: ProductCardMode;
 } & PropsWithClassName;
