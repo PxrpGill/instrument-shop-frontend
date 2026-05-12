@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition-property: color, background-color, opacity;
+    transition-property: all;
 
     &.dark {
         color: var(--color-text-on-accent);
