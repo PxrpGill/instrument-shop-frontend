@@ -1,6 +1,7 @@
 import { APP_ROUTES } from "@/shared/config/app-routes";
 import type { AboutCompanySectionProps } from "@/widgets/about-company-section/types/about-company-section.types";
 import type { HeroSectionProps } from "@/widgets/hero-section/types/hero-section.types";
+import type { NewsCtaSectionProps } from "@/widgets/news-cta-section/types/news-cta-section.types";
 import type { ReviewsSectionProps } from "@/widgets/reviews-section/types/reviews-section.types";
 import type { ShowcaseSectionProps } from "@/widgets/showcase-section/types/showcase-section.types";
 
@@ -531,4 +532,19 @@ export const SHOWCASE_DATA: ShowcaseSectionProps = {
 			],
 		},
 	],
+};
+
+export const NEWS_CTA_SECTION_DATA: NewsCtaSectionProps = {
+	title: "Жизнь нашего магазина",
+	description:
+		"Мы&nbsp;постоянно обновляем ассортимент и&nbsp;делимся внутренними новостями: от&nbsp;графиков работы в&nbsp;праздники до&nbsp;фотоотчетов с&nbsp;испытаний нового оборудования.",
+	button: {
+		title: "Смотреть новости",
+		href: APP_ROUTES.news,
+	},
+	poster: {
+		webp: {
+			src: "/mock/hero/hero.webp",
+		},
+	},
 };
