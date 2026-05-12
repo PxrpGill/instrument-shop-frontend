@@ -1,11 +1,26 @@
 .root {
-    @mixin responsive min-height, 120, 340;
-    @mixin responsive border-radius, 10, 15;
-    @mixin responsive padding, 15, 25;
+    @mixin responsive gap, 20, 20;
 
     width: 100%;
     height: fit-content;
     position: sticky;
+    display: flex;
+    flex-direction: column;
     top: 10%;
-    background-color: var(--color-bg-tertiary);
+}
+
+.titleBlock {
+    @mixin responsive gap, 5, 5;
+
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    @mixin h5;
+}
+
+.faders {
+    @mixin responsive width, 24, 24;
+    @mixin responsive height, 24, 24;
 }
