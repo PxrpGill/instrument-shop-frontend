@@ -1,0 +1,188 @@
+.root {
+    position: relative;
+    width: 100%;
+}
+
+.nativeSelect {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+.trigger {
+    @mixin responsive border-radius, 6, 6;
+    @mixin responsive padding-inline, 10, 10;
+    @mixin responsive padding-block, 7, 7;
+    @mixin responsive min-height, 36, 36;
+    @mixin body;
+    @mixin transitionOptions 0.2s;
+    @mixin responsive --border, 2, 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--color-bg-tertiary);
+    border: var(--border) solid var(--color-border);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    text-align: left;
+    transition-property: border-color, background-color;
+
+    @media (hover: hover) {
+        &:hover:not(:disabled) {
+            border-color: var(--color-gray-400);
+        }
+    }
+}
+
+.open .trigger {
+    border-color: var(--color-accent);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.disabled .trigger {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.selectedArea {
+    @mixin responsive gap, 4, 4;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    min-width: 0;
+}
+
+.placeholder {
+    color: var(--color-text-muted);
+}
+
+.chip {
+    @mixin responsive border-radius, 4, 4;
+    @mixin responsive padding-inline, 6, 6;
+    @mixin responsive padding-block, 2, 2;
+    @mixin responsive gap, 4, 4;
+    @mixin small;
+
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-accent-bg);
+    border: calc(1rem / 14.4) solid var(--color-accent-border);
+    color: var(--color-accent);
+    white-space: nowrap;
+}
+
+.chipRemove {
+    @mixin responsive width, 12, 12;
+    @mixin responsive height, 12, 12;
+    @mixin transitionOptions 0.15s;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    opacity: 0.6;
+    transition-property: opacity;
+
+    @media (hover: hover) {
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.caret {
+    @mixin responsive width, 14, 14;
+    @mixin responsive height, 14, 14;
+    @mixin transitionOptions 0.2s;
+
+    flex-shrink: 0;
+    color: var(--color-text-secondary);
+    transition-property: transform;
+}
+
+.caretOpen {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    @mixin responsive --padding, 4, 4;
+    @mixin responsive --border, 1, 1;
+    @mixin responsive --border-radius, 6, 6;
+    @mixin responsive max-height, 200, 200;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    list-style: none;
+    margin: 0;
+    padding: var(--padding) 0;
+    background-color: var(--color-bg-tertiary);
+    border: var(--border) solid var(--color-accent);
+    border-top: none;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-gray-400) transparent;
+}
+
+.option {
+    @mixin responsive padding-inline, 10, 10;
+    @mixin responsive padding-block, 7, 7;
+    @mixin responsive gap, 8, 8;
+    @mixin body;
+    @mixin transitionOptions 0.15s;
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    color: var(--color-text-secondary);
+    transition-property: background-color, color;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--color-bg-elevated);
+            color: var(--color-text-primary);
+        }
+    }
+}
+
+.optionSelected {
+    color: var(--color-text-primary);
+}
+
+.checkbox {
+    @mixin responsive width, 14, 14;
+    @mixin responsive height, 14, 14;
+    @mixin responsive border-radius, 3, 3;
+    @mixin transitionOptions 0.15s;
+    @mixin responsive --border, 1.5, 1.5;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: var(--border) solid var(--color-gray-400);
+    transition-property: border-color, background-color;
+
+    .optionSelected & {
+        border-color: var(--color-accent);
+        background-color: var(--color-accent);
+        color: var(--color-text-on-accent);
+    }
+}
+
+.checkIcon {
+    width: 70%;
+    height: 70%;
+}

@@ -24,3 +24,10 @@
     @mixin responsive width, 24, 24;
     @mixin responsive height, 24, 24;
 }
+
+.filters {
+    @mixin responsive gap, 10, 10;
+    
+    display: flex;
+    flex-direction: column;
+}

@@ -1,4 +1,5 @@
 import type { ProductCategoryProps } from "@/entities/product-categories/types/product-categories.types";
+import type { CatalogFiltersProps } from "@/features/catalog-filters/types/catalog-filters.types";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 
 export type CatalogCategoriesProps = {
@@ -8,4 +9,5 @@ export type CatalogCategoriesProps = {
 
 export type CatalogSectionProps = {
 	categoriesBlock?: CatalogCategoriesProps;
+	filterBlock?: CatalogFiltersProps;
 } & PropsWithClassName;
