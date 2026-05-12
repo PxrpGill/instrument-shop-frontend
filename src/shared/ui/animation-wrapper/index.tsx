@@ -1,13 +1,8 @@
 "use client";
 
-import {
-	type ComponentPropsWithoutRef,
-	type ElementType,
-	type ReactNode,
-	useRef,
-} from "react";
+import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 
-import { useIntersectionAnimation } from "@/shared/hooks/use-intersection-animation";
+import { useIntersectionObserver } from "@/shared/hooks/use-intersection-observer";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 import css from "./index.module.css";
 
@@ -24,14 +19,12 @@ export function AnimationWrapper<T extends ElementType = "div">({
 	...rest
 }: AnimationWrapperProps<T>) {
 	const Component = as ?? "div";
-	const ref = useRef<HTMLElement>(null);
-
-	useIntersectionAnimation(ref, css.visible);
+	const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.3 });
 
 	return (
 		<Component
 			ref={ref as never}
-			className={`${css.wrapper} ${className}`.trim()}
+			className={`${css.wrapper} ${isIntersecting && css.visible} ${className}`.trim()}
 			{...rest}
 		>
 			{children}
