@@ -1,10 +1,19 @@
 .root {
     @mixin responsive padding-block, 10, 12;
+    @mixin transitionOptions;
+
+    transition-property: translate;
 
     position: fixed;
     top: 0;
     z-index: 1000;
     width: 100%;
+    translate: 0 0;
+
+
+    &.hidden {
+        translate: 0 -100%;
+    }
 
     @media (max-width: $mobile) {
         backdrop-filter: blur(25px);
