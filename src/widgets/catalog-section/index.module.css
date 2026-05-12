@@ -5,6 +5,11 @@
 
     display: grid;
     grid-template-columns: var(--first-col) auto;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .contentWrapper {
@@ -19,4 +24,10 @@
 
     background-color: var(--color-bg-tertiary);
     width: 100%;
+}
+
+.filters[class] {
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }

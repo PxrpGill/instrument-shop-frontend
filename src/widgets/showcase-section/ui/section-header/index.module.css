@@ -1,11 +1,19 @@
 .root {
     display: flex;
     justify-content: space-between;
-    align-items: end
+    align-items: end;
+
+    @media (max-width: $mobile) {
+        align-items: center;
+    }
 }
 
 .title {
     @mixin h3;
+
+    @media (max-width: $mobile) {
+        @mixin h2;
+    }
 }
 
 .icon {

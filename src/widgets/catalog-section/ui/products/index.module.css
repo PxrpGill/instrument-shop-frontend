@@ -18,6 +18,10 @@
     &.horizontal {
         grid-template-columns: 1fr;
     }
+
+    @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .card[class] {
@@ -32,4 +36,10 @@
 
 .pagination[class] {
     align-self: center;
+}
+
+.modes[class] {
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }

@@ -29,7 +29,7 @@ export default function Products({
 						dangerouslySetInnerHTML={{ __html: title }}
 					/>
 				)}
-				<GridModes onChangeMode={setMode} />
+				<GridModes onChangeMode={setMode} className={css.modes} />
 			</div>
 			<ul className={`${css.list} ${css[mode]}`.trim()}>
 				{products.map((product) => (

@@ -6,9 +6,9 @@ import Button from "@/shared/ui/button";
 import css from "./index.module.css";
 import type { GridModesProps } from "./types/grid-modes.types";
 
-export default function GridModes({ onChangeMode }: GridModesProps) {
+export default function GridModes({ onChangeMode, className }: GridModesProps) {
 	return (
-		<div className={`${css.root}`}>
+		<div className={`${css.root} ${className}`}>
 			<Button onClick={() => onChangeMode("horizontal")} className={css.button}>
 				<AlignRightSimpleIcon className={css.icon} />
 			</Button>

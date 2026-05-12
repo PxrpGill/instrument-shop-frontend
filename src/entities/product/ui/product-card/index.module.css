@@ -79,6 +79,7 @@
     @mixin responsive gap, 5, 5;
 
     display: flex;
+    align-items: center;
 }
 
 .price {
@@ -86,6 +87,10 @@
     
     line-height: 1;
     font-weight: 700;
+
+    @media (max-width: $mobile) {
+        @mixin h4;
+    }
 }
 
 .favoriteButton[class] {

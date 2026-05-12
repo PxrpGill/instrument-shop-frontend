@@ -13,7 +13,11 @@ export default function CatalogSection({
 }: CatalogSectionProps) {
 	return (
 		<section className={`${css.root} ${className} container`}>
-			{filterBlock ? <CatalogFilters {...filterBlock} /> : <div />}
+			{filterBlock ? (
+				<CatalogFilters {...filterBlock} className={css.filters} />
+			) : (
+				<div />
+			)}
 
 			<div className={css.contentWrapper}>
 				<Categories {...categoriesBlock} />

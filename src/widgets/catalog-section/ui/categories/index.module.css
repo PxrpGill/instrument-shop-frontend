@@ -10,10 +10,15 @@
 }
 
 .list {
-    @mixin responsive gap, 20, 15;
+    @mixin responsive gap, 5, 15;
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 .card[class] {

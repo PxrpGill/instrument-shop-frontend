@@ -78,7 +78,7 @@ export const REVIEWS_DATA: ReviewsSectionProps = {
 export const SHOWCASE_DATA: ShowcaseSectionProps = {
 	title: "Наши товары",
 	button: {
-		title: "Перейти в каталог",
+		title: "В каталог",
 		href: APP_ROUTES.catalog,
 	},
 	showcases: [
