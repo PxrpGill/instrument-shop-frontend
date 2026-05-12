@@ -35,7 +35,10 @@ export default function ProductCard({
 				</div>
 			)}
 			{sku && (
-				<p className={css.sku} dangerouslySetInnerHTML={{ __html: sku }} />
+				<p
+					className={css.sku}
+					dangerouslySetInnerHTML={{ __html: "Артикул: " + sku }}
+				/>
 			)}
 			{(title || description) && (
 				<div className={css.info}>
