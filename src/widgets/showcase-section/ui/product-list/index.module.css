@@ -1,0 +1,45 @@
+.title {
+    @mixin responsive padding-block-end, 12, 12;
+    @mixin h5;
+
+    @media (max-width: $mobile) {
+        @mixin h4;
+    }
+}
+
+.slider.slider[class] {
+    @mixin responsive padding-inline, 20, 60;
+
+    :global(.swiper-slide)[class] {
+		height: auto;
+	}
+
+    :global(.swiper-pagination)[class] {
+        @mixin responsive gap, 5, 5;
+        @mixin responsive padding-block-start, 15, 20;
+
+        position: static;
+        display: flex;
+        justify-content: center;
+    }
+
+    :global(.swiper-pagination-bullet)[class] {
+        @mixin responsive width, 7, 7;
+        @mixin responsive height, 7, 7;
+
+        margin: 0;
+        background-color: var(--color-gray-900);
+    }
+
+    :global(.swiper-pagination-bullet-active)[class] {
+        background-color: var(--color-accent);
+    }
+}
+
+.swiperSlide.swiperSlide[class] {
+    height: 100%;
+}
+
+.product.product[class] {
+    height: 100%;
+}

@@ -1,4 +1,4 @@
 export const MEDIA_QUERIES = {
-	mobile: "767px",
-	desktop: "1440px",
+	mobile: "(max-width: 767px)",
+	desktop: "(max-width: 1440px)",
 };

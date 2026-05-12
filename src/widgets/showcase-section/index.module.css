@@ -3,5 +3,12 @@
 }
 
 .header {
-    @mixin responsive padding-block-end, 20, 20;
+    @mixin responsive padding-block-end, 30, 40;
+}
+
+.list {
+    @mixin responsive gap, 30, 40;
+
+    display: flex;
+    flex-direction: column;
 }

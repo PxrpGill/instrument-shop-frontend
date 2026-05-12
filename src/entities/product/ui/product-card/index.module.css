@@ -1,0 +1,141 @@
+.root {
+    @mixin responsive padding, 15, 15;
+    @mixin responsive border-radius, 10, 10;
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--color-bg-tertiary);
+
+    @media (hover:hover) {
+        &:hover {
+            .backdrop {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .showMore[class] {
+                scale: 1;
+            }
+        }
+    }
+}
+
+.imageWrapper {
+    @mixin responsive border-radius, 10, 10;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+
+    background-color: var(--color-bg-secondary);
+}
+
+.sku {
+    @mixin responsive font-size, 12, 12;
+
+    line-height: 1.1;
+    color: var(--color-gray-600);
+}
+
+.info {
+    @mixin responsive gap, 5, 5;
+    @mixin responsive padding-block-end, 15;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @mixin h6;
+}
+
+.description {
+    @mixin small;
+}
+
+.cartWrapper {
+    margin-block-start: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    z-index: 10;
+}
+
+.buttons {
+    @mixin responsive gap, 5, 5;
+
+    display: flex;
+}
+
+.price {
+    @mixin body;
+    
+    line-height: 1;
+    font-weight: 700;
+}
+
+.favoriteButton[class] {
+    @mixin responsive padding, 8, 8;
+    @mixin responsive width, 34, 34;
+    @mixin responsive height, 34, 34;
+}
+
+.icon {
+    @mixin responsive width, 20, 16;
+    @mixin responsive height, 20, 16;
+}
+
+.link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.backdrop {
+    @mixin transitionOptions;
+
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    backdrop-filter: blur(25px);
+
+    &::before {
+        content: '';
+
+        top: 0;
+        left: 0;
+        opacity: 0.7;
+        width: 100%;
+        height: 100%;
+        background: var(--color-bg-primary);
+        position: absolute;
+    }
+}
+
+.showMore[class] {
+    @mixin responsive padding, 22, 22;
+
+    scale: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.arrow {
+    @mixin responsive width, 20, 20;
+    @mixin responsive height, 20, 20;
+}

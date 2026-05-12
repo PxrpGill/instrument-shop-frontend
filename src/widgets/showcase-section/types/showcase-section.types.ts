@@ -12,5 +12,7 @@ export type ShowcaseProductListProps = {
 	products?: Array<ProductCardProps>;
 } & PropsWithClassName;
 
-export type ShowcaseSectionProps = {} & ShowcaseSectionHeaderProps &
+export type ShowcaseSectionProps = {
+	showcases?: Array<ShowcaseProductListProps>;
+} & ShowcaseSectionHeaderProps &
 	PropsWithClassName;

@@ -1,11 +1,19 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 
-import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
+"use client";
+
+import { ArrowUpRightIcon, BasketIcon, HeartIcon } from "@phosphor-icons/react";
+import Link from "next/link";
+import { APP_ROUTES } from "@/shared/config/app-routes";
+import { concantenateUrlSegments } from "@/shared/lib/concantenate-url-segments";
+import Button from "@/shared/ui/button";
 import Picture from "@/shared/ui/picture";
 import type { ProductCardProps } from "../../types/product-card.types";
 import css from "./index.module.css";
 
 export default function ProductCard({
+	id,
+	category,
 	title,
 	description,
 	poster,
@@ -13,11 +21,17 @@ export default function ProductCard({
 	price,
 	sku,
 }: ProductCardProps) {
+	const [firstCategory] = category;
+
 	return (
-		<AnimationWrapper as="article" className={`${css.root} ${className}`}>
+		<article className={`${css.root} ${className}`}>
 			{poster && (
 				<div className={css.imageWrapper}>
 					<Picture poster={poster} />
+					<div className={css.backdrop} />
+					<Button className={css.showMore} size="l">
+						<ArrowUpRightIcon className={css.arrow} />
+					</Button>
 				</div>
 			)}
 			{sku && (
@@ -41,7 +55,23 @@ export default function ProductCard({
 			)}
 			<div className={css.cartWrapper}>
 				{price && <p className={css.price}>{price} ₽</p>}
+				<div className={css.buttons}>
+					<Button className={css.favoriteButton}>
+						<HeartIcon className={css.icon} />
+					</Button>
+					<Button leftIcon={<BasketIcon className={css.icon} />}>
+						Добавить
+					</Button>
+				</div>
 			</div>
-		</AnimationWrapper>
+			<Link
+				className={css.link}
+				href={concantenateUrlSegments([
+					APP_ROUTES.catalog,
+					firstCategory.slug,
+					id.toString(),
+				])}
+			/>
+		</article>
 	);
 }
