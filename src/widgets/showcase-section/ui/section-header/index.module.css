@@ -1,0 +1,13 @@
+.root {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    @mixin h3;
+}
+
+.icon {
+    @mixin responsive width, 14, 14;
+    @mixin responsive height, 14, 14;
+}

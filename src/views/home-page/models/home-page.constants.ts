@@ -2,6 +2,7 @@ import { APP_ROUTES } from "@/shared/config/app-routes";
 import type { AboutCompanySectionProps } from "@/widgets/about-company-section/types/about-company-section.types";
 import type { HeroSectionProps } from "@/widgets/hero-section/types/hero-section.types";
 import type { ReviewsSectionProps } from "@/widgets/reviews-section/types/reviews-section.types";
+import type { ShowcaseSectionProps } from "@/widgets/showcase-section/types/showcase-section.types";
 
 export const HERO_SECTION_DATA: HeroSectionProps = {
 	title: "Инструменты для работы без компромиссов",
@@ -71,4 +72,12 @@ export const REVIEWS_DATA: ReviewsSectionProps = {
 			grade: 5,
 		},
 	],
+};
+
+export const SHOWCASE_DATA: ShowcaseSectionProps = {
+	title: "Наши товары",
+	button: {
+		title: "Перейти в каталог",
+		href: APP_ROUTES.catalog,
+	},
 };
