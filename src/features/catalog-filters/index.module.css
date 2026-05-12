@@ -1,0 +1,11 @@
+.root {
+    @mixin responsive min-height, 120, 340;
+    @mixin responsive border-radius, 10, 15;
+    @mixin responsive padding, 15, 25;
+
+    width: 100%;
+    height: fit-content;
+    position: sticky;
+    top: 10%;
+    background-color: var(--color-bg-tertiary);
+}

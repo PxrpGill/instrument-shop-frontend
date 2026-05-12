@@ -1,0 +1,8 @@
+.root {
+    @mixin responsive --first-col, 0, 340;
+    @mixin responsive padding-block, 45, 60;
+    @mixin responsive gap, 20, 40;
+
+    display: grid;
+    grid-template-columns: var(--first-col) auto;
+}

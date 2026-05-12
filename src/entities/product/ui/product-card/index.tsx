@@ -5,6 +5,7 @@
 import { ArrowUpRightIcon, BasketIcon, HeartIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import { APP_ROUTES } from "@/shared/config/app-routes";
+import { FALLBACK_PRODUCT_IMAGE } from "@/shared/config/fallback-product-image";
 import { concantenateUrlSegments } from "@/shared/lib/concantenate-url-segments";
 import Button from "@/shared/ui/button";
 import Picture from "@/shared/ui/picture";
@@ -22,18 +23,17 @@ export default function ProductCard({
 	sku,
 }: ProductCardProps) {
 	const [firstCategory] = category;
+	const currentPoster = poster ?? FALLBACK_PRODUCT_IMAGE;
 
 	return (
 		<article className={`${css.root} ${className}`}>
-			{poster && (
-				<div className={css.imageWrapper}>
-					<Picture poster={poster} />
-					<div className={css.backdrop} />
-					<Button className={css.showMore} size="l">
-						<ArrowUpRightIcon className={css.arrow} />
-					</Button>
-				</div>
-			)}
+			<div className={css.imageWrapper}>
+				<Picture poster={currentPoster} />
+				<div className={css.backdrop} />
+				<Button className={css.showMore} size="l">
+					<ArrowUpRightIcon className={css.arrow} />
+				</Button>
+			</div>
 			{sku && (
 				<p
 					className={css.sku}
