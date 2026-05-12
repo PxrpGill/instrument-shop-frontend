@@ -1,6 +1,6 @@
 .root {
     @mixin transitionOptions;
-    @mixin responsive border-radius, 5, 5;
+    @mixin responsive border-radius, 999, 999;
     @mixin responsive gap, 5, 5;
 
     display: flex;

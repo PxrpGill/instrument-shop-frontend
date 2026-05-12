@@ -6,8 +6,10 @@ import css from "./index.module.css";
 export default function Header({ className }: HeaderProps) {
 	return (
 		<header className={`${css.root} ${className} container`.trim()}>
-			<Logo hideAddressOnMobile />
-			<HeaderNavigation />
+			<div className={css.wrapper}>
+				<Logo hideAddressOnMobile className={css.logo} />
+				<HeaderNavigation className={css.nav} />
+			</div>
 		</header>
 	);
 }

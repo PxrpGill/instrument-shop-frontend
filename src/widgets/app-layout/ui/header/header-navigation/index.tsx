@@ -1,8 +1,9 @@
 "use client";
 
-import { BasketIcon, HeartIcon, UserIcon } from "@phosphor-icons/react";
+import { HeartIcon, UserIcon } from "@phosphor-icons/react";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 import Button from "@/shared/ui/button";
+import CartButton from "./cart-button";
 import css from "./index.module.css";
 
 export default function HeaderNavigation({ className }: PropsWithClassName) {
@@ -14,9 +15,7 @@ export default function HeaderNavigation({ className }: PropsWithClassName) {
 			<Button className={css.button}>
 				<HeartIcon className={css.icon} />
 			</Button>
-			<Button className={css.button}>
-				<BasketIcon className={css.icon} />
-			</Button>
+			<CartButton />
 		</nav>
 	);
 }
