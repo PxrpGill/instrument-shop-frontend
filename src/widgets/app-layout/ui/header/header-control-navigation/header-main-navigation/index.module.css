@@ -1,0 +1,5 @@
+.list {
+    @mixin responsive gap, 10, 15;
+
+    display: flex;
+}

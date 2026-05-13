@@ -32,6 +32,13 @@
     }
 }
 
+.mainNav {
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.mainNav,
 .logo,
 .nav {
     position: relative;

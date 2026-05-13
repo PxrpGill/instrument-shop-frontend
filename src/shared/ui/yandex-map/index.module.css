@@ -1,0 +1,8 @@
+.root {
+    @mixin responsive border-radius, 10, 12;
+
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-bg-tertiary);
+}

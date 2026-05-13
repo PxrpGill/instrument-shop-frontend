@@ -6,7 +6,9 @@ import Button from "@/shared/ui/button";
 import CartButton from "./cart-button";
 import css from "./index.module.css";
 
-export default function HeaderNavigation({ className }: PropsWithClassName) {
+export default function HeaderControlNavigation({
+	className,
+}: PropsWithClassName) {
 	return (
 		<nav className={`${css.root} ${className}`}>
 			<Button className={css.button}>

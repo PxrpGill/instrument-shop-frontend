@@ -1,0 +1,3 @@
+.feedback[class] {
+    @mixin responsive padding-block-start, 100, 120;
+}
