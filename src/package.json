@@ -22,6 +22,11 @@
     "redux": "^5.0.1",
     "swiper": "^12.1.4"
   },
+  "pnpm": {
+    "overrides": {
+      "postcss": ">=8.5.10"
+    }
+  },
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
     "@types/node": "^20",
