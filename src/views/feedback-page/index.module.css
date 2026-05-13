@@ -1,3 +1,4 @@
 .feedback[class] {
-    @mixin responsive padding-block-start, 100, 120;
+    @mixin responsive padding-block-start, 80, 120;
+    @mixin responsive padding-block-end, 20;
 }

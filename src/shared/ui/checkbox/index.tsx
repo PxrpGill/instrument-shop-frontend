@@ -1,3 +1,6 @@
+/** biome-ignore-all lint/a11y/noSvgWithoutTitle: <explanation> */
+/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
+
 "use client";
 
 import { type ComponentPropsWithoutRef, useId } from "react";
@@ -54,7 +57,7 @@ export default function Checkbox({
 					</span>
 				</span>
 
-				{label && <span className={css.labelText}>{label}</span>}
+				{label && <span className={css.labelText} dangerouslySetInnerHTML={{__html: label}} />}
 			</label>
 
 			{(error || hint) && (

@@ -4,6 +4,11 @@
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .mainContent {
@@ -11,4 +16,18 @@
 
     display: flex;
     flex-direction: column;
+}
+
+.mobileMap {
+    display: none;
+
+    @media (max-width: $mobile) {
+        display: block;
+    }
+}
+
+.desktopMap[class] {
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }

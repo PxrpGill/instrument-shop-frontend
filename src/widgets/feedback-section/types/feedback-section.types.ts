@@ -1,3 +1,4 @@
+import type { FormSettingsType } from "@/shared/types/form-settings.types";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 
 export type FeedbackSectionHeaderProps = {
@@ -5,5 +6,6 @@ export type FeedbackSectionHeaderProps = {
 	description?: string;
 } & PropsWithClassName;
 
-export type FeedbackSectionProps = {} & FeedbackSectionHeaderProps &
+export type FeedbackSectionProps = {} & FormSettingsType &
+	FeedbackSectionHeaderProps &
 	PropsWithClassName;

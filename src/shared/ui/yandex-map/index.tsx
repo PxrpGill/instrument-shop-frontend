@@ -2,11 +2,20 @@
 
 "use client";
 
-import { Map, YMaps } from "@pbe/react-yandex-maps";
+import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 import css from "./index.module.css";
 
-export default function YandexMap({ className }: PropsWithClassName) {
+const DEFAULT_CENTER: [number, number] = [47.250999, 39.763243];
+
+interface YandexMapProps extends PropsWithClassName {
+	pin?: [number, number];
+}
+
+export default function YandexMap({
+	className,
+	pin = DEFAULT_CENTER,
+}: YandexMapProps) {
 	return (
 		<div className={`${css.root} ${className}`.trim()}>
 			<YMaps
@@ -14,8 +23,10 @@ export default function YandexMap({ className }: PropsWithClassName) {
 			>
 				<Map
 					style={{ width: "100%", height: "100%" }}
-					defaultState={{ center: [55.755864, 37.617698], zoom: 10 }}
-				></Map>
+					defaultState={{ center: pin, zoom: 16 }}
+				>
+					<Placemark geometry={pin} />
+				</Map>
 			</YMaps>
 		</div>
 	);
