@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+LOCK_DIR="src"
+
+REMOTE="$1"
+URL="$2"
+
+echo "🔍 Переход в директорию $LOCK_DIR..."
+cd "$LOCK_DIR" || { echo "❌ Не удалось перейти в $LOCK_DIR" && exit 1; }
+
+echo "🔍 Проверка: существует ли pnpm-lock.yaml..."
+if [ ! -f pnpm-lock.yaml ]; then
+	echo "❌ Файл pnpm-lock.yaml не найден в $LOCK_DIR. Отмена пуша."
+	exit 1
+fi
+
+echo "🔍 Запуск pnpm audit (npm registry)..."
+if ! pnpm audit --registry=https://registry.npmjs.org --audit-level=low; then
+  echo "🚫 Найдены уязвимости. Пуш отменён."
+  exit 1
+fi
+
+echo "✅ Уязвимостей не найдено."
+
+echo "🔍 Проверка build..."
+if ! pnpm build; then
+	echo "🚫 Сборка завершилась с ошибкой. Пуш отменён."
+	exit 1
+fi
+
+echo "✅ Собралось успешно."
+
+# exec заменяет процесс hook'а на git push.
+# Exit code push'а станет exit code hook'а.
+# --no-verify обходит pre-push hook, исключая рекурсию.
+echo "🚀 Билд прошёл. Выполняю git push..."
+exec git push --no-verify
