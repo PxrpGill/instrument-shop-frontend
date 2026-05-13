@@ -1,0 +1,3 @@
+.catalog[class] {
+    @mixin responsive padding-block-start, 90, 100;
+}

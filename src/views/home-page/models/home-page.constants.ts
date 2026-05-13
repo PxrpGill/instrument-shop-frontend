@@ -513,8 +513,8 @@ export const NEWS_CTA_SECTION_DATA: NewsCtaSectionProps = {
 		href: APP_ROUTES.news,
 	},
 	poster: {
-		webp: {
-			src: "/mock/hero/hero.webp",
+		original: {
+			src: "/mock/about-company/yellow-vector.png",
 		},
 	},
 };

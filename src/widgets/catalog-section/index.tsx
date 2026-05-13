@@ -13,15 +13,15 @@ export default function CatalogSection({
 }: CatalogSectionProps) {
 	return (
 		<section className={`${css.root} ${className} container`}>
-			{filterBlock ? (
-				<CatalogFilters {...filterBlock} className={css.filters} />
-			) : (
-				<div />
-			)}
+			<CatalogFilters {...filterBlock} className={css.filters} />
 
 			<div className={css.contentWrapper}>
-				<Categories {...categoriesBlock} />
-				<AnimationWrapper className={css.divider} />
+				{categoriesBlock && (
+					<>
+						<Categories {...categoriesBlock} />
+						<AnimationWrapper className={css.divider} />
+					</>
+				)}
 				<Products {...productsBlock} />
 			</div>
 		</section>
