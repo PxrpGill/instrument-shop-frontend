@@ -1,4 +1,9 @@
 import { APP_ROUTES } from "@/shared/config/app-routes";
+import {
+	EMAIL_VALIDATION,
+	FULL_NAME_VALIDATION,
+	PHONE_VALIDATION,
+} from "@/shared/config/form-inputs-validation";
 import type { FormSettingsType } from "@/shared/types/form-settings.types";
 import type { FeedbackSectionProps } from "@/widgets/feedback-section/types/feedback-section.types";
 import type { NewsCtaSectionProps } from "@/widgets/news-cta-section/types/news-cta-section.types";
@@ -16,6 +21,7 @@ export const FEEDBACK_FORM_SETTINGS: FormSettingsType["formInputs"] = [
 			{
 				registrationId: "fullName",
 				inputName: "input",
+				rules: FULL_NAME_VALIDATION,
 				inputProps: {
 					label: "Как к вам обращаться?",
 					placeholder: "Например: Иван Иванов",
@@ -24,6 +30,7 @@ export const FEEDBACK_FORM_SETTINGS: FormSettingsType["formInputs"] = [
 			{
 				registrationId: "email",
 				inputName: "input",
+				rules: EMAIL_VALIDATION,
 				inputProps: {
 					type: "email",
 					label: "Email для обратной связи",
@@ -33,6 +40,7 @@ export const FEEDBACK_FORM_SETTINGS: FormSettingsType["formInputs"] = [
 			{
 				registrationId: "phone",
 				inputName: "input",
+				rules: PHONE_VALIDATION,
 				inputProps: {
 					type: "tel",
 					label: "Номер телефона",

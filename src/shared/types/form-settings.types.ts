@@ -1,3 +1,4 @@
+import type { RegisterOptions } from "react-hook-form";
 import type { CheckboxProps } from "../ui/checkbox";
 import type { InputProps } from "../ui/input";
 import type { MultiSelectProps } from "../ui/multi-select";
@@ -9,6 +10,7 @@ export type FormInputProps = {
 	registrationId: string;
 	inputName: "input" | "textarea" | "multi-select" | "checkbox";
 	inputProps: InputProps | TextareaProps | MultiSelectProps | CheckboxProps;
+	rules?: RegisterOptions;
 };
 
 export type FormInputsType = {
