@@ -1,0 +1,3 @@
+.productDetails {
+    @mixin responsive margin-block-start, 80, 50;
+}

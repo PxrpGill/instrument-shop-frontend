@@ -1,0 +1,8 @@
+.root {
+    @mixin responsive border-radius, 12, 15;
+    @mixin responsive min-height, 0, 550;
+    @mixin responsive padding-inline, 0, 30;
+    @mixin responsive padding-block, 0, 40;
+
+    background-color: var(--color-bg-tertiary);
+}

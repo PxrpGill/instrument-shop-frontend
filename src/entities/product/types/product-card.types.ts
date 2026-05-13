@@ -13,4 +13,5 @@ export type ProductCardProps = {
 	price?: number;
 	sku?: string;
 	cardMode?: ProductCardMode;
+	gallery?: Array<PictureFormatType>;
 } & PropsWithClassName;

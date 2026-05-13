@@ -1,0 +1,41 @@
+.root {
+    @mixin responsive gap, 10, 10;
+    @mixin responsive --first-col, 0, 200;
+
+    position: sticky;
+    top: 15%;
+
+    display: flex;
+    flex-direction: column-reverse;
+
+    height: fit-content;
+}
+
+.minVersions {
+    @mixin responsive gap, 10, 10;
+    
+    display: flex;
+}
+
+.mainImage,
+.smallImageWrapper {
+    @mixin responsive border-radius, 12, 15;
+    
+    overflow: hidden;
+
+    position: relative;
+    flex-shrink: 0;
+
+    background-color: var(--color-bg-tertiary);
+}
+
+.mainImage {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.smallImageWrapper {
+    @mixin responsive width, 100, 120;
+
+    aspect-ratio: 1 / 1;
+}
