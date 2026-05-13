@@ -1,9 +1,5 @@
-import Textarea from "@/shared/ui/textarea";
+import css from "./index.module.css";
 
 export default function FeedbackForm() {
-	return (
-		<form>
-			<Textarea />
-		</form>
-	);
+	return <form className={`${css.root}`}></form>;
 }

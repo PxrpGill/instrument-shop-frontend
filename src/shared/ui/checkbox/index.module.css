@@ -1,0 +1,145 @@
+.root {
+    display: flex;
+    flex-direction: column;
+
+    @mixin responsive gap, 5, 6;
+}
+
+/* ── Label (clickable row) ───────────────────────────── */
+
+.label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    @mixin responsive gap, 8, 10;
+}
+
+/* ── Checkbox wrapper (positions native input + box) ─── */
+
+.checkboxWrapper {
+    position: relative;
+    flex-shrink: 0;
+
+    @mixin responsive width, 18, 20;
+    @mixin responsive height, 18, 20;
+}
+
+/* ── Hidden native input (covers full hit-area) ─────── */
+
+.input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* ── Custom visual box ───────────────────────────────── */
+
+.box {
+    @mixin transitionOptions 0.2s;
+
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-tertiary);
+    border: calc(1.5rem / 14.4) solid var(--color-border);
+    border-radius: calc(4rem / 14.4);
+    pointer-events: none;
+    color: var(--color-text-on-accent);
+    transition-property: background-color, border-color;
+}
+
+/* ── Checkmark SVG (draws in when checked) ───────────── */
+
+.checkmark {
+    @mixin responsive width, 10, 12;
+    @mixin responsive height, 10, 12;
+
+    stroke-dasharray: 16;
+    stroke-dashoffset: 16;
+
+    @mixin transitionOptions 0.2s;
+
+    transition-property: stroke-dashoffset;
+}
+
+/* ── Checked state ───────────────────────────────────── */
+
+.input:checked ~ .box {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.input:checked ~ .box .checkmark {
+    stroke-dashoffset: 0;
+}
+
+/* ── Focus-visible ring ──────────────────────────────── */
+
+.input:focus-visible ~ .box {
+    outline: calc(2rem / 14.4) solid var(--color-accent);
+    outline-offset: calc(2rem / 14.4);
+}
+
+/* ── Hover state ─────────────────────────────────────── */
+
+@media (hover: hover) {
+    .root:not(.disabled) .label:hover .input:not(:checked) ~ .box {
+        border-color: var(--color-gray-400);
+    }
+}
+
+/* ── Label text ──────────────────────────────────────── */
+
+.labelText {
+    @mixin body;
+
+    color: var(--color-text-primary);
+}
+
+/* ── Error state ─────────────────────────────────────── */
+
+.hasError .box {
+    border-color: var(--color-error);
+}
+
+.hasError .input:checked ~ .box {
+    background-color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+/* ── Disabled state ──────────────────────────────────── */
+
+.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+
+    & .label {
+        cursor: not-allowed;
+    }
+
+    & .input {
+        cursor: not-allowed;
+    }
+}
+
+/* ── Message (hint / error) ──────────────────────────── */
+
+.message {
+    @mixin small;
+
+    color: var(--color-text-muted);
+
+    @mixin responsive padding-left, 26, 30;
+}
+
+.errorMessage {
+    color: var(--color-error);
+}
