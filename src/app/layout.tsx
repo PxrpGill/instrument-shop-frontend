@@ -5,6 +5,7 @@ import "@/shared/styles/colors.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import Favicon from "@/shared/config/favicon";
 import { GENERAL_META } from "@/shared/config/general-meta.constants";
 import GoogleSans from "@/shared/config/local-font";
 import AppLayout from "@/widgets/app-layout";
@@ -27,6 +28,7 @@ export default function RootLayout({
 					content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
 					key="viewport"
 				/>
+				<Favicon />
 			</head>
 			<body className={GoogleSans.className}>
 				<AppLayout>{children}</AppLayout>
