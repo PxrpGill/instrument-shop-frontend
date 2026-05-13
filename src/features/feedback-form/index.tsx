@@ -1,3 +1,9 @@
+import Textarea from "@/shared/ui/textarea";
+
 export default function FeedbackForm() {
-	return <form></form>;
+	return (
+		<form>
+			<Textarea />
+		</form>
+	);
 }

@@ -1,0 +1,130 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @mixin responsive gap, 5, 6;
+}
+
+/* ── Label ───────────────────────────────────────────── */
+
+.label {
+    @mixin small;
+
+    color: var(--color-text-secondary);
+    user-select: none;
+}
+
+/* ── Wrapper ─────────────────────────────────────────── */
+
+.textareaWrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+/* ── Focus bar (bottom accent line) ─────────────────── */
+
+.focusBar {
+    @mixin transitionOptions 0.25s;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: calc(2rem / 14.4);
+    background-color: var(--color-accent);
+    transform: translateX(-50%);
+    border-radius: 999px;
+    pointer-events: none;
+    transition-property: width;
+}
+
+/* ── Textarea ─────────────────────────────────────────── */
+
+.textarea {
+    @mixin body;
+    @mixin transitionOptions 0.2s;
+    @mixin responsive border-radius, 6, 6;
+
+    width: 100%;
+    min-height: 80px;
+    overflow: hidden;
+    resize: none;
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    border: calc(1.5rem / 14.4) solid var(--color-border);
+    outline: none;
+    transition-property: border-color, background-color;
+    caret-color: var(--color-accent);
+    font-family: inherit;
+
+    &::placeholder {
+        color: var(--color-text-muted);
+    }
+
+    &:focus {
+        border-color: var(--color-gray-400);
+        background-color: var(--color-bg-elevated);
+
+        & ~ .focusBar {
+            width: calc(100% - calc(4rem / 14.4));
+        }
+    }
+
+    @media (hover: hover) {
+        &:not(:disabled):not(:focus):hover {
+            border-color: var(--color-gray-400);
+        }
+    }
+}
+
+/* ── Size variants ───────────────────────────────────── */
+
+.s .textarea {
+    @mixin responsive padding-inline, 8, 10;
+    @mixin responsive padding-block, 5, 6;
+}
+
+.m .textarea {
+    @mixin responsive padding-inline, 10, 12;
+    @mixin responsive padding-block, 7, 8;
+}
+
+.l .textarea {
+    @mixin responsive padding-inline, 12, 14;
+    @mixin responsive padding-block, 10, 12;
+}
+
+/* ── Error state ─────────────────────────────────────── */
+
+.hasError .textarea {
+    border-color: var(--color-error);
+
+    &:focus ~ .focusBar {
+        background-color: var(--color-error);
+    }
+}
+
+/* ── Disabled state ──────────────────────────────────── */
+
+.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+
+    & .textarea {
+        cursor: not-allowed;
+    }
+}
+
+/* ── Message (hint / error) ──────────────────────────── */
+
+.message {
+    @mixin small;
+
+    color: var(--color-text-muted);
+}
+
+.errorMessage {
+    color: var(--color-error);
+}
