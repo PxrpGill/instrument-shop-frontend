@@ -10,7 +10,7 @@ export default function BottomFooter({ className }: BottomFooterProps) {
 				<Link className={css.link} href={APP_ROUTES.privacyPolicy}>
 					Политика конфиденциальности
 				</Link>
-				<Link className={css.link} href={APP_ROUTES.userAgreement}>
+				<Link className={css.link} href={APP_ROUTES.personalDataConsent}>
 					Обработка персональных данных
 				</Link>
 			</div>
