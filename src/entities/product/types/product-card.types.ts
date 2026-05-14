@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { ProductCategoryProps } from "@/entities/product-categories/types/product-categories.types";
 import type { PropsWithClassName } from "@/shared/types/props-with-classname";
 import type { PictureFormatType } from "@/shared/ui/picture";
@@ -14,4 +15,5 @@ export type ProductCardProps = {
 	sku?: string;
 	cardMode?: ProductCardMode;
 	gallery?: Array<PictureFormatType>;
+	productControls?: ReactNode;
 } & PropsWithClassName;

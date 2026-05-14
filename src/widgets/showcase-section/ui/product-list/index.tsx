@@ -9,6 +9,7 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import ProductCard from "@/entities/product/ui/product-card";
+import ProductControls from "@/features/product-controls";
 import { AnimationWrapper } from "@/shared/ui/animation-wrapper";
 import { useProductListSwiper } from "../../hooks/use-product-list-swiper";
 import type { ShowcaseProductListProps } from "../../types/showcase-section.types";
@@ -43,7 +44,11 @@ export default function ProductList({
 						className={css.swiperSlide}
 						key={`${product.sku}-${product.title}`}
 					>
-						<ProductCard {...product} className={css.product} />
+						<ProductCard
+							{...product}
+							className={css.product}
+							productControls={<ProductControls />}
+						/>
 					</SwiperSlide>
 				))}
 			</Swiper>

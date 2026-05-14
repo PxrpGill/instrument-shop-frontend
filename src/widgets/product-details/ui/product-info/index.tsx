@@ -3,7 +3,11 @@
 import type { ProductInfoProps } from "../../types/product-details.types";
 import css from "./index.module.css";
 
-export default function ProductInfo({ title, description }: ProductInfoProps) {
+export default function ProductInfo({
+	title,
+	description,
+	sku,
+}: ProductInfoProps) {
 	return (
 		<div className={`${css.root}`}>
 			<div className={css.headerInfo}>
@@ -13,7 +17,13 @@ export default function ProductInfo({ title, description }: ProductInfoProps) {
 						className={css.title}
 					/>
 				)}
-				{description && <p dangerouslySetInnerHTML={{ __html: description }} />}
+				{description && (
+					<p
+						dangerouslySetInnerHTML={{ __html: description }}
+						className={css.description}
+					/>
+				)}
+				{sku && <p className={css.sku}>Артикул: {sku}</p>}
 			</div>
 		</div>
 	);

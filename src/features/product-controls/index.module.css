@@ -1,0 +1,17 @@
+.buttons {
+    @mixin responsive gap, 5, 5;
+
+    display: flex;
+    align-items: center;
+}
+
+.favoriteButton[class] {
+    @mixin responsive padding, 8, 8;
+    @mixin responsive width, 34, 34;
+    @mixin responsive height, 34, 34;
+}
+
+.icon {
+    @mixin responsive width, 20, 16;
+    @mixin responsive height, 20, 16;
+}

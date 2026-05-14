@@ -22,6 +22,7 @@ export default function ProductCard({
 	price,
 	sku,
 	cardMode = "vertical",
+	productControls,
 }: ProductCardProps) {
 	const [firstCategory] = category;
 	const currentPoster = poster ?? FALLBACK_PRODUCT_IMAGE;
@@ -60,14 +61,7 @@ export default function ProductCard({
 				)}
 				<div className={css.cartWrapper}>
 					{price && <p className={css.price}>{price} ₽</p>}
-					<div className={css.buttons}>
-						<Button className={css.favoriteButton}>
-							<HeartIcon className={css.icon} />
-						</Button>
-						<Button leftIcon={<BasketIcon className={css.icon} />}>
-							Добавить
-						</Button>
-					</div>
+					{productControls}
 				</div>
 			</div>
 			<Link
