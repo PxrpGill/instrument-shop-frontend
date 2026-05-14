@@ -49,9 +49,9 @@ export default function CookiesPanel() {
 					<Link href={APP_ROUTES.privacyPolicy} target="_blank">
 						политику конфиденциальности
 					</Link>{" "}
-					и&nbsp;даете согласие на&nbsp;
-					<Link href={APP_ROUTES.userAgreement} target="_blank">
-						обработку персональных данных
+					и&nbsp;даете{" "}
+					<Link href={APP_ROUTES.personalDataConsent} target="_blank">
+						согласие на&nbsp;обработку персональных данных
 					</Link>
 					.
 				</p>

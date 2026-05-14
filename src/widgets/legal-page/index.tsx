@@ -1,19 +1,28 @@
+/** biome-ignore-all lint/suspicious/useIterableCallbackReturn: <explanation> */
+
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { APP_ROUTES } from "@/shared/config/app-routes";
-import type { LegalPageProps } from "./types/legal-page.types";
 import css from "./index.module.css";
+import type { LegalPageProps } from "./types/legal-page.types";
 
 const RELATED_LINKS = [
 	{ href: APP_ROUTES.privacyPolicy, label: "Политика конфиденциальности" },
 	{ href: APP_ROUTES.userAgreement, label: "Пользовательское соглашение" },
-	{ href: APP_ROUTES.personalDataConsent, label: "Согласие на обработку персональных данных" },
+	{
+		href: APP_ROUTES.personalDataConsent,
+		label: "Согласие на обработку персональных данных",
+	},
 ];
 
-export default function LegalPage({ title, lastUpdated, sections }: LegalPageProps) {
+export default function LegalPage({
+	title,
+	lastUpdated,
+	sections,
+}: LegalPageProps) {
 	const [activeId, setActiveId] = useState<string>(sections[0]?.id ?? "");
 	const sectionRefs = useRef<Map<string, HTMLElement>>(new Map());
 	const pathname = usePathname();
@@ -95,11 +104,13 @@ export default function LegalPage({ title, lastUpdated, sections }: LegalPagePro
 						<footer className={css.relatedDocs}>
 							<p className={css.relatedTitle}>Связанные документы</p>
 							<div className={css.relatedLinks}>
-								{RELATED_LINKS.filter(({ href }) => href !== pathname).map(({ href, label }) => (
-									<Link key={href} href={href} className={css.relatedLink}>
-										{label}
-									</Link>
-								))}
+								{RELATED_LINKS.filter(({ href }) => href !== pathname).map(
+									({ href, label }) => (
+										<Link key={href} href={href} className={css.relatedLink}>
+											{label}
+										</Link>
+									),
+								)}
 							</div>
 						</footer>
 					</div>

@@ -13,6 +13,9 @@ export default function BottomFooter({ className }: BottomFooterProps) {
 				<Link className={css.link} href={APP_ROUTES.personalDataConsent}>
 					Обработка персональных данных
 				</Link>
+				<Link className={css.link} href={APP_ROUTES.userAgreement}>
+					Пользовательское соглашение
+				</Link>
 			</div>
 			<time className={css.time}>Инструмент, {new Date().getFullYear()}</time>
 		</nav>

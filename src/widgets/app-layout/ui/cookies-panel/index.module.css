@@ -1,5 +1,5 @@
 .root {
-    @mixin responsive width, 330, 845;
+    @mixin responsive width, 335, 850;
     @mixin responsive margin-block-end, 10, 10;
     @mixin transitionOptions;
     @mixin responsive padding, 10, 10;
