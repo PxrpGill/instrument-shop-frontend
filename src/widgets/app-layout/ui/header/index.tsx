@@ -20,7 +20,10 @@ export default function Header({ className }: HeaderProps) {
 
 		if (!header) return;
 
-		header.style.setProperty("--_collapsed-h", `${header.offsetHeight}px`);
+		header.style.height = "auto";
+		const h = header.offsetHeight;
+		header.style.removeProperty("height");
+		header.style.setProperty("--_collapsed-h", `${h}px`);
 	}, []);
 
 	useEffect(() => {
