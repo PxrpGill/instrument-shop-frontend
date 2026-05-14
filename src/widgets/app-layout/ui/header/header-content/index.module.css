@@ -1,0 +1,28 @@
+.root {
+    @mixin transitionOptions;
+    @mixin responsive padding-block, 45, 45;
+
+    transition-property: opacity, visibility;
+    overflow-y: scroll;
+
+    opacity: 0;
+    visibility: hidden;
+    flex-direction: column;
+    position: relative;
+    display: none;
+
+    z-index: 11;
+
+    width: 100%;
+    height: 100%;
+
+    &.visible {
+        visibility: visible;
+        opacity: 1;
+        display: flex;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

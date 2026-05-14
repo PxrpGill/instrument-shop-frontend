@@ -9,11 +9,15 @@ import {
 	useState,
 } from "react";
 import { useIntersectionObserver } from "@/shared/hooks/use-intersection-observer";
+import type { HeaderContentModesType } from "../types/header.types";
 
 type AppLayoutContextType = {
-	footerRef: (node?: Element | null | undefined) => void;
 	isFooterVisible: boolean;
 	isHeaderOpened: boolean;
+	headerContentModes: HeaderContentModesType;
+
+	toggleHeaderContentMode: Dispatch<SetStateAction<HeaderContentModesType>>;
+	footerRef: (node?: Element | null | undefined) => void;
 	toggleHeaderOpen: Dispatch<SetStateAction<boolean>>;
 };
 
@@ -28,10 +32,19 @@ export function AppLayoutProvider({ children }: PropsWithChildren) {
 		});
 
 	const [isHeaderOpened, toggleHeaderOpen] = useState<boolean>(false);
+	const [headerContentModes, toggleHeaderContentMode] =
+		useState<HeaderContentModesType>(undefined);
 
 	return (
 		<AppLayoutContext.Provider
-			value={{ footerRef, isFooterVisible, isHeaderOpened, toggleHeaderOpen }}
+			value={{
+				isFooterVisible,
+				isHeaderOpened,
+				headerContentModes,
+				toggleHeaderContentMode,
+				toggleHeaderOpen,
+				footerRef,
+			}}
 		>
 			{children}
 		</AppLayoutContext.Provider>

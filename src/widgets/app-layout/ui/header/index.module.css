@@ -3,7 +3,6 @@
     @mixin transitionOptions;
 
     transition-property: translate, height;
-    animation-timing-function: cubic-bezier(0.68,-0.55,0.27,1.55);
 
     position: fixed;
     top: 0;
@@ -77,15 +76,13 @@
     transition-property: border-radius;
     transition-delay: 0.3s;
     display: flex;
-    justify-content: space-between;
     align-items: start;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
     width: 100%;
     height: 100%;
     
-    animation-timing-function: cubic-bezier(0.68,-0.55,0.27,1.55);
-
     backdrop-filter: blur(25px);
 
     &::before {
@@ -108,3 +105,4 @@
         }
     }
 }
+

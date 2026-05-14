@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useScrollDown } from "@/shared/hooks/use-scroll-down";
 import Logo from "@/shared/ui/logo";
 import { useAppLayoutContext } from "../../models/app-layout-context";
 import type { HeaderProps } from "../../types/header.types";
+import HeaderContent from "./header-content";
 import HeaderControlNavigation from "./header-control-navigation";
 import HeaderMainNavigation from "./header-control-navigation/header-main-navigation";
 import css from "./index.module.css";
@@ -14,16 +15,28 @@ export default function Header({ className }: HeaderProps) {
 	const { isHeaderOpened } = useAppLayoutContext();
 	const headerRef = useRef<HTMLElement>(null);
 
-	useEffect(() => {
+	const handleResize = useCallback(() => {
 		const header = headerRef.current;
+
 		if (!header) return;
+
 		header.style.setProperty("--_collapsed-h", `${header.offsetHeight}px`);
 	}, []);
+
+	useEffect(() => {
+		handleResize();
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, [handleResize]);
 
 	return (
 		<header
 			ref={headerRef}
-			className={`${css.root} ${className} ${isScrolledDown && css.hidden} ${isHeaderOpened && css.opened} container`.trim()}
+			className={`${css.root} ${className} ${isScrolledDown && !isHeaderOpened && css.hidden} ${isHeaderOpened && css.opened} container`.trim()}
 		>
 			<div className={css.wrapper}>
 				<div className={css.mainHeader}>
@@ -31,6 +44,7 @@ export default function Header({ className }: HeaderProps) {
 					<HeaderMainNavigation className={css.mainNav} />
 					<HeaderControlNavigation className={css.nav} />
 				</div>
+				<HeaderContent />
 			</div>
 		</header>
 	);
