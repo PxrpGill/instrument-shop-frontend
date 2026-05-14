@@ -1,11 +1,20 @@
 "use client";
 
-import { createContext, type PropsWithChildren, useContext } from "react";
+import {
+	createContext,
+	type Dispatch,
+	type PropsWithChildren,
+	type SetStateAction,
+	useContext,
+	useState,
+} from "react";
 import { useIntersectionObserver } from "@/shared/hooks/use-intersection-observer";
 
 type AppLayoutContextType = {
 	footerRef: (node?: Element | null | undefined) => void;
 	isFooterVisible: boolean;
+	isHeaderOpened: boolean;
+	toggleHeaderOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 export const AppLayoutContext = createContext<AppLayoutContextType | undefined>(
@@ -18,8 +27,12 @@ export function AppLayoutProvider({ children }: PropsWithChildren) {
 			threshold: 0.1,
 		});
 
+	const [isHeaderOpened, toggleHeaderOpen] = useState<boolean>(false);
+
 	return (
-		<AppLayoutContext.Provider value={{ footerRef, isFooterVisible }}>
+		<AppLayoutContext.Provider
+			value={{ footerRef, isFooterVisible, isHeaderOpened, toggleHeaderOpen }}
+		>
 			{children}
 		</AppLayoutContext.Provider>
 	);
