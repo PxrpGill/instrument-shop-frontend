@@ -1,13 +1,47 @@
 .root {
     @mixin responsive padding-block, 15, 15;
-    @mixin responsive gap, 15, 15;
-    @mixin responsive --border, 1, 1;
+    @mixin responsive gap, 15, 25;
     
     display: flex;
     flex-direction: column;
-    border-bottom: var(--border) solid var(--color-gray-500);
 }
 
 .title {
     @mixin h6;
+
+    @media (max-width: $mobile) {
+        @mixin h4;
+    }
+}
+
+.list {
+    @mixin responsive gap, 20, 30;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.specificationTitle {
+    @mixin body;
+    
+    font-weight: 600;
+}
+
+.paragraph {
+    @mixin responsive gap, 10, 10;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.specifications {
+    @mixin responsive gap, 10, 10;
+    
+    display: flex;
+    flex-direction: column;
 }

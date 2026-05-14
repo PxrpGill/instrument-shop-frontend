@@ -10,13 +10,22 @@
 
 .title {
     @mixin h6;
+
+    @media (max-width: $mobile) {
+        @mixin h4;
+    }
 }
 
 .wrap {
-    @mixin responsive gap, 20, 15;
+    @mixin responsive gap, 10, 15;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .parameterTitle {
@@ -27,7 +36,7 @@
 
 .paragraph {
     @mixin responsive gap, 10, 15;
-    @mixin responsive padding, 10, 15;
+    @mixin responsive padding, 15, 15;
     @mixin responsive border-radius, 10, 10;
 
     display: flex;

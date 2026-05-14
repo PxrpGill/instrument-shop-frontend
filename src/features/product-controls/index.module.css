@@ -5,10 +5,12 @@
     align-items: center;
 }
 
-.favoriteButton[class] {
-    @mixin responsive padding, 8, 8;
-    @mixin responsive width, 34, 34;
-    @mixin responsive height, 34, 34;
+.favoriteButton.favoriteButton[class] {
+    &.withoutText {
+        @mixin responsive padding, 8, 8;
+        @mixin responsive width, 34, 34;
+        @mixin responsive height, 34, 34;
+    }
 }
 
 .icon {

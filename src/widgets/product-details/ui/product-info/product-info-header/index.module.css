@@ -15,6 +15,10 @@
 .title,
 .description {
     @mixin responsive max-width, 0, 470;
+
+    @media (max-width: $mobile) {
+        max-width: unset;
+    }
 }
 
 .description {

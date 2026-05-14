@@ -23,7 +23,7 @@ export function AnimationWrapper<T extends ElementType = "div">({
 	...rest
 }: AnimationWrapperProps<T>) {
 	const Component = as ?? "div";
-	const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.3 });
+	const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
 
 	return (
 		<Component

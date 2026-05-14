@@ -1,9 +1,14 @@
 .root {
     @mixin responsive padding-block, 45, 60;
-    @mixin responsive gap, 0, 30;
+    @mixin responsive gap, 20, 30;
     @mixin responsive --first-col, 0, 400;
 
     display: grid;
     grid-template-columns: var(--first-col) auto;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 

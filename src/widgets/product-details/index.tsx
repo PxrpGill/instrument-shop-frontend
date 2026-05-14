@@ -13,7 +13,10 @@ export default function ProductDetails({
 	category,
 	description,
 	sku,
+	price,
 	descriptionParameters,
+	techicalSpecifications,
+	status,
 }: ProductDetailsProps) {
 	return (
 		<AnimationWrapper
@@ -24,10 +27,13 @@ export default function ProductDetails({
 			<ProductInfo
 				id={id}
 				sku={sku}
+				price={price}
 				title={title}
 				description={description}
 				category={category}
+				status={status}
 				descriptionParameters={descriptionParameters}
+				techicalSpecification={techicalSpecifications}
 			/>
 		</AnimationWrapper>
 	);

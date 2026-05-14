@@ -2,7 +2,7 @@
 
 "use client";
 
-import { ArrowUpRightIcon, BasketIcon, HeartIcon } from "@phosphor-icons/react";
+import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import { APP_ROUTES } from "@/shared/config/app-routes";
 import { FALLBACK_PRODUCT_IMAGE } from "@/shared/config/fallback-product-image";

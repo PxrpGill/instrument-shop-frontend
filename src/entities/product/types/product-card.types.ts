@@ -20,12 +20,18 @@ export type ProductTechnicalSpecificationsType = {
 	specifications: Array<ProductTechnicalSpecificationType>;
 };
 
+export type ProductStatusType = {
+	slugStatus: "outOfStock" | "inStock";
+	title: string;
+};
+
 export type ProductCardProps = {
 	id: number;
 	category: Array<Omit<ProductCategoryProps, "className" | "poster">>;
 	title?: string;
 	description?: string;
 	poster?: PictureFormatType;
+	status?: ProductStatusType;
 	price?: number;
 	sku?: string;
 	cardMode?: ProductCardMode;

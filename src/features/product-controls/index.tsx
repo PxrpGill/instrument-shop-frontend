@@ -6,13 +6,20 @@ import Button from "@/shared/ui/button";
 import css from "./index.module.css";
 import type { ProductControlsProps } from "./types/product-controls.types";
 
-export default function ProductControls({ className }: ProductControlsProps) {
+export default function ProductControls({
+	className,
+	cartText = "Добавить",
+	favoriteText,
+}: ProductControlsProps) {
 	return (
 		<div className={`${css.buttons} ${className}`.trim()}>
-			<Button className={css.favoriteButton}>
-				<HeartIcon className={css.icon} />
+			<Button
+				className={`${css.favoriteButton} ${!favoriteText && css.withoutText }`.trim()}
+				leftIcon={<HeartIcon className={css.icon} />}
+			>
+				{favoriteText}
 			</Button>
-			<Button leftIcon={<BasketIcon className={css.icon} />}>Добавить</Button>
+			<Button leftIcon={<BasketIcon className={css.icon} />}>{cartText}</Button>
 		</div>
 	);
 }

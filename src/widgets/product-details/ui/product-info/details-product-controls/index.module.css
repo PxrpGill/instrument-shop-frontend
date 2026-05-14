@@ -1,0 +1,37 @@
+.root {
+    @mixin responsive padding-block, 15, 30;
+    @mixin responsive gap, 10, 25;
+
+    display: flex;
+    flex-direction: column
+}
+
+.priceWrap {
+    @mixin responsive gap, 10, 15;
+
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+        align-items: start;
+        flex-direction: column;
+    }
+}
+
+.price {
+    @mixin h4;
+}
+
+.controls[class] {
+    flex-direction: row-reverse;
+
+    @media (max-width: $mobile) {
+        flex-direction: column-reverse;
+        width: 100%;
+        align-items: start;
+        
+        button[class] {
+            width: 100%;
+        }
+    }
+}

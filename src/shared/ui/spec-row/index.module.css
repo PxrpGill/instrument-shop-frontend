@@ -1,0 +1,29 @@
+.root {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.label {
+    @mixin small;
+
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.dots {
+    flex: 1;
+    min-width: 16px;
+    border-bottom: 2px dotted var(--color-gray-400);
+    margin-bottom: 2px;
+}
+
+.value {
+    @mixin small;
+
+    color: var(--color-text-primary);
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}

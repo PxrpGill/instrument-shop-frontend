@@ -82,7 +82,7 @@ export default function Picture({
 				}
 				alt={alt}
 				fetchPriority={fetchPriority}
-				loading={loading}
+				loading={loading ?? "lazy"}
 			/>
 		</picture>
 	);

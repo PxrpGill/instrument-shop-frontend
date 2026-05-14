@@ -17,9 +17,22 @@ export type ProductInfoDescriptionParametersProps = {
 	descriptionParameters?: ProductCardProps["descriptionParameters"];
 } & PropsWithClassName;
 
+export type ProductTechicalSpecificationsProps = {
+	techicalSpecification?: ProductCardProps["techicalSpecifications"];
+} & PropsWithClassName;
+
+export type DetailsProductControlsProps = {
+	id: ProductCardProps["id"];
+	price?: ProductCardProps["price"];
+	status?: ProductCardProps["status"];
+} & PropsWithClassName;
+
 export type ProductInfoProps = PropsWithClassName &
 	ProductInfoHeaderProps &
+	ProductTechicalSpecificationsProps &
+	DetailsProductControlsProps &
 	ProductInfoDescriptionParametersProps & {
 		id: ProductCardProps["id"];
 		category: ProductCardProps["category"];
+		price?: ProductCardProps["price"];
 	};
