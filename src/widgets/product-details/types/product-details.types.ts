@@ -7,5 +7,19 @@ export type ProductGalleryProps = PropsWithClassName & {
 	gallery?: ProductCardProps["gallery"];
 };
 
+export type ProductInfoHeaderProps = {
+	title?: ProductCardProps["title"];
+	description?: ProductCardProps["description"];
+	sku?: ProductCardProps["sku"];
+} & PropsWithClassName;
+
+export type ProductInfoDescriptionParametersProps = {
+	descriptionParameters?: ProductCardProps["descriptionParameters"];
+} & PropsWithClassName;
+
 export type ProductInfoProps = PropsWithClassName &
-	Omit<ProductCardProps, "className" | "poster" | "cardMode" | "gallery">;
+	ProductInfoHeaderProps &
+	ProductInfoDescriptionParametersProps & {
+		id: ProductCardProps["id"];
+		category: ProductCardProps["category"];
+	};

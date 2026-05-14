@@ -5,6 +5,21 @@ import type { PictureFormatType } from "@/shared/ui/picture";
 
 export type ProductCardMode = "vertical" | "horizontal";
 
+export type ProductDescriptionParametersType = {
+	title?: string;
+	parameters: string;
+};
+
+export type ProductTechnicalSpecificationType = {
+	label: string;
+	value: string;
+};
+
+export type ProductTechnicalSpecificationsType = {
+	title: string;
+	specifications: Array<ProductTechnicalSpecificationType>;
+};
+
 export type ProductCardProps = {
 	id: number;
 	category: Array<Omit<ProductCategoryProps, "className" | "poster">>;
@@ -16,4 +31,6 @@ export type ProductCardProps = {
 	cardMode?: ProductCardMode;
 	gallery?: Array<PictureFormatType>;
 	productControls?: ReactNode;
+	descriptionParameters?: Array<ProductDescriptionParametersType>;
+	techicalSpecifications?: Array<ProductTechnicalSpecificationsType>;
 } & PropsWithClassName;

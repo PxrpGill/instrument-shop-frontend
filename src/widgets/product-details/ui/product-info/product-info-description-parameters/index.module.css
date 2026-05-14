@@ -1,0 +1,53 @@
+.root {
+    @mixin responsive padding-block, 15, 15;
+    @mixin responsive gap, 15, 15;
+    @mixin responsive --border, 1, 1;
+    
+    display: flex;
+    flex-direction: column;
+    border-bottom: var(--border) solid var(--color-gray-500);
+}
+
+.title {
+    @mixin h6;
+}
+
+.wrap {
+    @mixin responsive gap, 20, 15;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.parameterTitle {
+    @mixin body;
+
+    font-weight: 500;
+}
+
+.paragraph {
+    @mixin responsive gap, 10, 15;
+    @mixin responsive padding, 10, 15;
+    @mixin responsive border-radius, 10, 10;
+
+    display: flex;
+    background-color: var(--color-bg-secondary);
+    flex-direction: column;
+}
+
+.parameterContent {
+    @mixin small;
+    @mixin responsive gap, 5, 10;
+
+    display: flex;
+    flex-direction: column;
+
+    ul {
+        @mixin responsive padding-inline, 10, 15;
+        @mixin responsive gap, 10, 8;
+
+        display: flex;
+        flex-direction: column;
+        list-style: disc;
+    }
+}

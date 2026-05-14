@@ -1,0 +1,28 @@
+.root {
+    @mixin responsive gap, 15, 10;
+    @mixin responsive padding-block-end, 15, 15;
+    @mixin responsive --border, 1, 1;
+
+    border-bottom: var(--border) solid var(--color-gray-500);
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @mixin h4;
+}
+
+.title,
+.description {
+    @mixin responsive max-width, 0, 470;
+}
+
+.description {
+    @mixin body;
+}
+
+.sku {
+    @mixin small;
+
+    color: var(--color-gray-600);
+}

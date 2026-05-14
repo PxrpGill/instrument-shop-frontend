@@ -1,0 +1,13 @@
+.root {
+    @mixin responsive padding-block, 15, 15;
+    @mixin responsive gap, 15, 15;
+    @mixin responsive --border, 1, 1;
+    
+    display: flex;
+    flex-direction: column;
+    border-bottom: var(--border) solid var(--color-gray-500);
+}
+
+.title {
+    @mixin h6;
+}

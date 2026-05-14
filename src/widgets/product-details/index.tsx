@@ -13,6 +13,7 @@ export default function ProductDetails({
 	category,
 	description,
 	sku,
+	descriptionParameters,
 }: ProductDetailsProps) {
 	return (
 		<AnimationWrapper
@@ -26,6 +27,7 @@ export default function ProductDetails({
 				title={title}
 				description={description}
 				category={category}
+				descriptionParameters={descriptionParameters}
 			/>
 		</AnimationWrapper>
 	);
