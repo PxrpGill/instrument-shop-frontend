@@ -1,0 +1,4 @@
+.banner[class] {
+    @mixin responsive padding-block-start, 80, 100;
+    @mixin responsive padding-block-end, 20, 30;
+}
