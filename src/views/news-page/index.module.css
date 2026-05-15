@@ -1,0 +1,3 @@
+.newsSection[class] {
+    @mixin responsive padding-block-start, 80, 100;
+}

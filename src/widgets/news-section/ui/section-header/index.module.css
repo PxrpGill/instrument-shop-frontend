@@ -1,0 +1,19 @@
+.root {
+    @mixin responsive gap, 10, 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @mixin h3;
+
+    @media (max-width: $mobile) {
+        @mixin h2;
+    }
+}
+
+.description {
+    @mixin h6;
+
+    font-weight: 400;
+}
