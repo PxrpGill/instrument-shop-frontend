@@ -43,6 +43,8 @@
 
 .title,
 .description {
+    @mixin responsive max-width, 270, 450;
+
     text-align: center;
 }
 
@@ -52,7 +54,6 @@
 
 .description {
     @mixin body;
-    @mixin responsive max-width, 270, 450;
 
     line-height: 1.5;
 }

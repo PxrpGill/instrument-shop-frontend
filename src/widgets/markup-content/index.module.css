@@ -1,0 +1,171 @@
+.root {
+	@mixin responsive font-size, 14, 16;
+
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	line-height: 1.75;
+	color: var(--color-text-secondary);
+}
+
+/* ── Headings ── */
+
+.root :is(h2, h3, h4) {
+	color: var(--color-text-primary);
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+.root h2 {
+	@mixin responsive font-size, 20, 28;
+	@mixin responsive margin-top, 32, 48;
+	@mixin responsive margin-bottom, 12, 20;
+
+	padding-bottom: 0.5em;
+	border-bottom: 2px solid var(--color-accent);
+	letter-spacing: -0.01em;
+}
+
+.root h3 {
+	@mixin responsive font-size, 16, 20;
+	@mixin responsive margin-top, 24, 36;
+	@mixin responsive margin-bottom, 8, 14;
+
+	color: var(--color-accent);
+}
+
+.root h4 {
+	@mixin responsive font-size, 14, 17;
+	@mixin responsive margin-top, 20, 28;
+	@mixin responsive margin-bottom, 6, 10;
+}
+
+/* ── Paragraphs ── */
+
+.root p {
+	@mixin responsive margin-bottom, 12, 18;
+}
+
+.root p:last-child {
+	margin-bottom: 0;
+}
+
+/* ── Strong & em ── */
+
+.root strong {
+	color: var(--color-text-primary);
+	font-weight: 600;
+}
+
+.root em {
+	color: var(--color-accent);
+	font-style: normal;
+}
+
+/* ── Lists ── */
+
+.root ul,
+.root ol {
+	@mixin responsive margin-bottom, 12, 18;
+	@mixin responsive padding-left, 16, 20;
+
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+
+.root ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.root ul li {
+	display: flex;
+	gap: 0.75em;
+	align-items: flex-start;
+}
+
+.root ul li::before {
+	content: "";
+	flex-shrink: 0;
+	width: 6px;
+	height: 6px;
+	margin-top: 0.65em;
+	background: var(--color-accent);
+	border-radius: 50%;
+}
+
+.root ol {
+	list-style: none;
+	counter-reset: ordered-list;
+}
+
+.root ol li {
+	display: flex;
+	gap: 0.75em;
+	align-items: flex-start;
+	counter-increment: ordered-list;
+}
+
+.root ol li::before {
+	content: counter(ordered-list) ".";
+	flex-shrink: 0;
+	min-width: 1.5em;
+	color: var(--color-accent);
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+}
+
+/* ── Blockquote ── */
+
+.root blockquote {
+	@mixin responsive margin-block, 20, 32;
+	@mixin responsive padding-block, 12, 18;
+	@mixin responsive padding-inline, 16, 24;
+
+	position: relative;
+	border-left: 3px solid var(--color-accent);
+	background: var(--color-bg-secondary);
+	border-radius: 0 6px 6px 0;
+	font-style: italic;
+}
+
+.root blockquote p {
+	margin-bottom: 0;
+	color: var(--color-text-primary);
+}
+
+/* ── Links ── */
+
+.root a {
+	color: var(--color-accent);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	text-decoration-thickness: 1px;
+	transition: color 0.2s ease;
+}
+
+.root a:hover {
+	color: var(--color-accent-hover);
+}
+
+/* ── Horizontal rule ── */
+
+.root hr {
+	@mixin responsive margin-block, 20, 32;
+
+	border: none;
+	border-top: 1px solid var(--color-border);
+}
+
+/* ── Code ── */
+
+.root code {
+	padding: 0.15em 0.45em;
+	background: var(--color-bg-elevated);
+	border: 1px solid var(--color-border-light);
+	border-radius: 4px;
+	font-size: 0.88em;
+	font-family: "Courier New", Courier, monospace;
+	color: var(--color-text-primary);
+}

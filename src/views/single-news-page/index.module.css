@@ -1,4 +1,13 @@
+.root {
+    @mixin responsive padding-block-end, 30, 60;
+}
+
 .banner[class] {
     @mixin responsive padding-block-start, 80, 100;
-    @mixin responsive padding-block-end, 20, 30;
+    @mixin responsive padding-block-end, 10, 30;
+}
+
+.content[class] {
+    @mixin responsive padding-inline, 20, 60;
+    @mixin responsive padding-block, 24, 30;
 }

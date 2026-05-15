@@ -2,4 +2,5 @@ import type { NewsCtaSectionProps } from "@/widgets/news-cta-section/types/news-
 
 export type SingleNewsPageProps = {
 	banner?: NewsCtaSectionProps;
+	content?: string;
 };
