@@ -27,7 +27,7 @@ export default function ProductList({
 	return (
 		<AnimationWrapper className={`${css.root} ${className}`}>
 			{title && (
-				<h4
+				<h3
 					className={`${css.title} container`.trim()}
 					dangerouslySetInnerHTML={{ __html: title }}
 				/>

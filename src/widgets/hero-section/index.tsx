@@ -42,7 +42,13 @@ export default function HeroSection({
 				)}
 			</div>
 			<div className={css.backdrop} />
-			{poster && <Picture poster={poster} className={css.poster} />}
+			{poster && (
+				<Picture
+					poster={poster}
+					className={css.poster}
+					alt="изображение баннера"
+				/>
+			)}
 		</AnimationWrapper>
 	);
 }

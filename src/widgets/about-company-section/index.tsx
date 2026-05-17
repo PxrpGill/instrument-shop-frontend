@@ -1,6 +1,6 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 
-'use client';
+"use client";
 
 import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import Link from "next/link";
@@ -28,12 +28,16 @@ export default function AboutCompanySection({
 			<div className={css.contentWrapper}>
 				{poster && (
 					<div className={css.imageWrapper}>
-						<Picture poster={poster} />
+						<Picture poster={poster} alt="изображение магазина" />
 						<div className={css.backdrop} />
-						<Button className={css.showMore} size="l">
+						<Button className={css.showMore} size="l" ariaLabel="иконка">
 							<ArrowUpRightIcon className={css.arrow} />
 						</Button>
-						<Link href={APP_ROUTES.about} className={css.link} />
+						<Link
+							href={APP_ROUTES.about}
+							className={css.link}
+							aria-label="перейти на страницу о компании"
+						/>
 					</div>
 				)}
 				<div className={css.content}>

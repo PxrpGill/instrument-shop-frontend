@@ -14,12 +14,18 @@ export default function ProductControls({
 	return (
 		<div className={`${css.buttons} ${className}`.trim()}>
 			<Button
-				className={`${css.favoriteButton} ${!favoriteText && css.withoutText }`.trim()}
+				className={`${css.favoriteButton} ${!favoriteText && css.withoutText}`.trim()}
 				leftIcon={<HeartIcon className={css.icon} />}
+				ariaLabel="Добавить в избранное"
 			>
 				{favoriteText}
 			</Button>
-			<Button leftIcon={<BasketIcon className={css.icon} />}>{cartText}</Button>
+			<Button
+				leftIcon={<BasketIcon className={css.icon} />}
+				ariaLabel="Добавить в корзину"
+			>
+				{cartText}
+			</Button>
 		</div>
 	);
 }

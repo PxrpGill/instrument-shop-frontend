@@ -30,9 +30,9 @@ export default function ProductCard({
 	return (
 		<article className={`${css.root} ${className} ${css[cardMode]}`}>
 			<div className={css.imageWrapper}>
-				<Picture poster={currentPoster} />
+				<Picture poster={currentPoster} alt="изображение товара" />
 				<div className={css.backdrop} />
-				<Button className={css.showMore} size="l">
+				<Button className={css.showMore} size="l" ariaLabel="иконка">
 					<ArrowUpRightIcon className={css.arrow} />
 				</Button>
 			</div>
@@ -46,7 +46,7 @@ export default function ProductCard({
 				{(title || description) && (
 					<div className={css.info}>
 						{title && (
-							<h5
+							<p
 								className={css.title}
 								dangerouslySetInnerHTML={{ __html: title }}
 							/>
@@ -71,6 +71,7 @@ export default function ProductCard({
 					firstCategory.slug,
 					id.toString(),
 				])}
+				aria-label="перейти на страницу товара"
 			/>
 		</article>
 	);

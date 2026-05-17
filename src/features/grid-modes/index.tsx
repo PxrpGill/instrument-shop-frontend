@@ -9,10 +9,18 @@ import type { GridModesProps } from "./types/grid-modes.types";
 export default function GridModes({ onChangeMode, className }: GridModesProps) {
 	return (
 		<div className={`${css.root} ${className}`}>
-			<Button onClick={() => onChangeMode("horizontal")} className={css.button}>
+			<Button
+				onClick={() => onChangeMode("horizontal")}
+				className={css.button}
+				ariaLabel="Сделать сетку горизонтальной"
+			>
 				<AlignRightSimpleIcon className={css.icon} />
 			</Button>
-			<Button onClick={() => onChangeMode("vertical")} className={css.button}>
+			<Button
+				onClick={() => onChangeMode("vertical")}
+				className={css.button}
+				ariaLabel="Сделать сетку вертикальной"
+			>
 				<TextColumnsIcon className={css.icon} />
 			</Button>
 		</div>

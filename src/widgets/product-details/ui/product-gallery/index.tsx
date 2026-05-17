@@ -46,12 +46,12 @@ export default function ProductGallery({
 						key={id}
 						onClick={() => handleThumbnailClick(index)}
 					>
-						<Picture poster={image} />
+						<Picture poster={image} alt="изображение товара" />
 					</button>
 				))}
 			</div>
 			<div className={css.mainImage} key={main.id}>
-				<Picture poster={main.image} />
+				<Picture poster={main.image} alt="изображение товара" />
 			</div>
 		</div>
 	);

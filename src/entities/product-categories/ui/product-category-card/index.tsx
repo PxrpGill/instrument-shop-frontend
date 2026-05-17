@@ -25,9 +25,9 @@ export default function ProductCategoryCard({
 	return (
 		<article className={`${css.root} ${className}`}>
 			<div className={css.imageWrapper}>
-				<Picture poster={currentPoster} />
+				<Picture poster={currentPoster} alt="изображение категории" />
 				<div className={css.backdrop} />
-				<Button className={css.showMore} size="l">
+				<Button className={css.showMore} size="l" ariaLabel="иконка">
 					<ArrowUpRightIcon className={css.arrow} />
 				</Button>
 			</div>
@@ -37,6 +37,7 @@ export default function ProductCategoryCard({
 			<Link
 				href={concantenateUrlSegments([APP_ROUTES.catalog, slug])}
 				className={css.link}
+				aria-label="Смотреть содержимое категории"
 			/>
 		</article>
 	);

@@ -15,6 +15,7 @@ export default function Button({
 	type = "button",
 	leftIcon,
 	rightIcon,
+	ariaLabel,
 }: ButtonComponentProps) {
 	if (href)
 		return (
@@ -22,6 +23,7 @@ export default function Button({
 				href={href}
 				target={target}
 				className={`${css.root} ${className} ${css[size]} ${css[theme]} ${css[variant]}`.trim()}
+				aria-label={ariaLabel}
 			>
 				{leftIcon}
 				{children}
@@ -33,6 +35,7 @@ export default function Button({
 		<button
 			onClick={onClick}
 			type={type}
+			aria-label={ariaLabel}
 			className={`${css.root} ${className} ${css[size]} ${css[theme]} ${css[variant]}`.trim()}
 		>
 			{leftIcon}

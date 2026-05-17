@@ -33,7 +33,7 @@ export default function ReviewCard({
 		>
 			<ReviewAuthor {...author} className={css.author} />
 			{title && (
-				<h5 dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
+				<p dangerouslySetInnerHTML={{ __html: title }} className={css.title} />
 			)}
 			{description && (
 				<p

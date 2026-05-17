@@ -24,7 +24,7 @@
 .time {
     @mixin small;
 
-    color: var(--color-text-muted)
+    color: var(--color-gray-900);
 }
 
 .link {

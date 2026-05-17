@@ -17,12 +17,14 @@ export default function HeaderControlNavigation({
 			<Button
 				className={css.button}
 				onClick={() => toggleHeaderOpen(!isHeaderOpened)}
+				ariaLabel="Открыть профиль"
 			>
 				<UserIcon className={css.icon} />
 			</Button>
 			<Button
 				className={css.button}
 				onClick={() => toggleHeaderOpen(!isHeaderOpened)}
+				ariaLabel="Смотреть избранные товары"
 			>
 				<HeartIcon className={css.icon} />
 			</Button>

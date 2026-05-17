@@ -26,7 +26,7 @@ export default function NewsCard({
 	return (
 		<article className={`${css.root} ${className}`.trim()}>
 			<div className={css.imageWrapper}>
-				<Picture poster={currentPoster} />
+				<Picture poster={currentPoster} alt="изображение новости" />
 				<div className={css.backdrop} />
 				<Button className={css.showMore} size="l">
 					<ArrowUpRightIcon className={css.arrow} />
@@ -54,6 +54,7 @@ export default function NewsCard({
 			<Link
 				className={css.link}
 				href={concantenateUrlSegments([APP_ROUTES.news, slug ?? ""])}
+				aria-label="читать новость"
 			/>
 		</article>
 	);

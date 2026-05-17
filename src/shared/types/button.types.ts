@@ -31,6 +31,7 @@ export type ButtonComponentProps = {
 	variant?: ButtonComponentVariantsType;
 	leftIcon?: ReactNode;
 	rightIcon?: ReactNode;
+	ariaLabel?: string;
 } & PropsWithClassName &
 	PropsWithChildren &
 	Omit<CustomButtonProps, "children" | "className"> &

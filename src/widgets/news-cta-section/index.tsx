@@ -48,7 +48,7 @@ export default function NewsCtaSection({
 				)}
 
 				<div className={css.backdrop} />
-				{poster && <Picture poster={poster} />}
+				{poster && <Picture poster={poster} alt="изображение cta секции" />}
 			</div>
 		</AnimationWrapper>
 	);
